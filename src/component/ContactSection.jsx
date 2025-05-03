@@ -6,27 +6,27 @@ const ContactSection = () => {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
         {/* Left Content */}
         <div className="md:w-2/3 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-wider">
-            <span className="text-purple-500"></span> CONTACT ME
+          <h2 className="text-3xl md:text-4xl tracking-wider">
+            <span className="text-purple-500 font-technor font-medium"></span> CONTACT ME
           </h2>
 
-          <p className="text-lg font-semibold text-white">
+          <p className="text-lg font-technor font-regular text-white">
             WANT TO DISCUSS A PROJECT?
           </p>
 
-          <p>Feel free to reach me via email at</p>
+          <p className='font-neue font-medium'>Feel free to reach me via email at</p>
           <a
             href="mailto:xd.olayinka@gmail.com"
-            className="text-purple-400 hover:underline block"
+            className="text-purple-400 hover:underline block font-neue font-medium"
           >
             xd.olayinka@gmail.com
           </a>
 
-          <p>
+          <p className='font-neue font-medium'>
             Or connect with me via phone call at{' '}
             <a
               href="tel:+2349099346124"
-              className="text-purple-500 hover:underline"
+              className="text-purple-500 hover:underline font-neue font-medium"
             >
               +234 9099346124
             </a>
@@ -52,7 +52,7 @@ const ContactSection = () => {
   />
 </div>
       </div>
-      <div className="mt-16 text-left md:text-center text-sm md:text-base flex flex-col md:flex-row gap-3 md:justify-center items-start md:items-center text-white font-light">
+      <div className="mt-16 text-left md:text-center font-neue font-regular text-sm md:text-base flex flex-col md:flex-row gap-3 md:justify-center items-start md:items-center text-white font-light">
   <a href="#discuss" className="hover:text-purple-400">
     Let’s Discuss &gt;
   </a>

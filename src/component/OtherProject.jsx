@@ -29,7 +29,7 @@ const OtherProject = () => {
     <section className="bg-black text-white py-20 px-4 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-xl text-left md:text-2xl font-semibold text-purple-500 mb-2">
-          <span className="text-white">Other projects</span>
+          <span className="text-white font-technor font-medium">Other projects</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-10">

@@ -4,20 +4,20 @@ const Hero = () => {
   return (
     <section className="text-white text-left mt-8 px-6 py-12 grid md:grid-cols-2 gap-8">
       <div>
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          <span className="md:block hidden">CREATIVE</span>
+        <h1 className="text-4xl md:text-6xl font-technor font-medium  leading-tight">
+          <span className="md:block hidden ">CREATIVE</span>
           <span className="md:block hidden">DIRECTOR & PM</span>
           <span className='md:hidden block'>DIGITAL DESIGNER</span>
         </h1>
-        <p className="mt-4 text-2xl  md:block hidden">with 7+ years of experience</p>
-        <p className="mt-4 text-2xl block md:hidden">4+ years of experience</p>
-        <p className="mt-6 max-w-xl md:block hidden text-lg text-white">
+        <p className="mt-4 text-2xl font-technor font-medium md:block hidden">with 7+ years of experience</p>
+        <p className="mt-4 text-2xl font-technor font-medium block md:hidden">4+ years of experience</p>
+        <p className="mt-6 max-w-xl font-neue font-medium md:block hidden text-sm text-white">
           I specialize in taking Ideas and Visions from obscurity to execution
           with Problem solving skills, Technology and Systems applied with out
           of the box thinking.
         </p>
-        <p className="mt-6 max-w-xl block md:hidden text-sm text-white">I deliver high quality designs services across multiple fields, helping both individuals and brands bring thier ideas to life </p>
-        <p className="mt-4 md:block hidden max-w-xl text-lg text-gray-300">
+        <p className="mt-6 max-w-xl font-neue font-medium block font-neue font-medium md:hidden text-sm text-white">I deliver high quality designs services across multiple fields, helping both individuals and brands bring thier ideas to life </p>
+        <p className="mt-4 md:block hidden max-w-xl text-lg ">
           My experience in Writing, Design, Marketing, Sales and Management,
           allowing me lead cross-functional teams achieve success
         </p>

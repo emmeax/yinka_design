@@ -73,12 +73,12 @@ const Hero = () => {
     <div className="p-4">
       {/* Responsive Section Header */}
       <h2 className="mt-3 text-white text-2xl md:text-5xl font-bold mb-6 text-left">
-        <span className="block md:hidden">SKILLSETS & <br />PROJECTS</span>
-        <span className="hidden md:block">COMPETENCIES & PROJECTS</span>
+        <span className="block font-technor font-medium md:hidden">SKILLSETS & <br />PROJECTS</span>
+        <span className="hidden font-technor font-medium md:block">COMPETENCIES & PROJECTS</span>
       </h2>
 
       {/* Category Buttons - hidden on mobile */}
-      <div className="hidden md:flex flex-wrap gap-4 justify-start mb-8">
+      <div className="hidden font-neue font-medium md:flex flex-wrap gap-4 justify-start mb-8">
         {categories.map((category, index) => (
           <button
             key={index}

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        montreal: ['"Neue Montreal"', 'sans-serif'],
+        neue: ['NeueMontreal', 'sans-serif'],
         technor: ['"Technor"', 'sans-serif'],
       }
     },

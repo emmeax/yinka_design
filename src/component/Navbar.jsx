@@ -19,10 +19,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black text-white p-4">
-      <div className="max-w-7xl mx-auto flex items-start justify-between">
+    <nav className="bg-black font-neue font-regular text-white p-4">
+      <div className="max-w-7xl mx-auto font-neue font-regular flex items-start justify-between">
         {/* Left Section: Name */}
-        <div className="text-2xl font-medium">Olayinka D. Adeyefa</div>
+        <div className="text-2xl font-neue font-medium">Olayinka D. Adeyefa</div>
 
         {/* Right Section: Desktop Content */}
         <div className="hidden md:flex flex-1 justify-between items-center ml-10">
