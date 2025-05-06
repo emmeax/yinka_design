@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Arrow from '../assets/Image/Arrow.png'
 
 const OtherProject = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -26,10 +27,11 @@ const OtherProject = () => {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-4 md:px-10 lg:px-20">
+    <section className="bg-black text-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-xl text-left md:text-2xl font-semibold text-purple-500 mb-2">
-          <span className="text-white font-technor font-medium">Other projects</span>
+        <h2 className="text-5xl text-left font-technor font-medium mb-6">
+          <span className="text-[#A22CFF] font-neue font-regular">03/</span>{' '}
+          <span className="text-white">Other projects</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-10">
@@ -51,11 +53,12 @@ const OtherProject = () => {
                 alt={project.alt}
                 className="w-full rounded-md shadow-lg"
               />
-              <p className="text-center mt-4">{project.caption}</p>
+              <p className="text-left mt-4 font-neue font-medium">{project.caption}</p>
             </div>
           ))}
         </div>
 
+        {/* Navigation Dots and Arrows */}
         <div className="flex justify-between items-center mt-8">
           <div className="flex gap-2">
             {projects.map((_, index) => (
@@ -67,7 +70,7 @@ const OtherProject = () => {
               ></div>
             ))}
           </div>
-          <div className="flex gap-4 text-white">
+          <div className="flex gap-4 text-white text-2xl">
             <button>&lt;</button>
             <button>&gt;</button>
           </div>
