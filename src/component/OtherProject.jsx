@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Arrow from '../assets/Image/Arrow.png'
+import Vector1 from '../assets/Image/Vector1.png'
+import Vector2 from '../assets/Image/Vector2.png'
 
 const OtherProject = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -8,17 +9,17 @@ const OtherProject = () => {
     {
       image: 'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746184606/all%20folder/980dd90941d61c4621dddd90073b3f416be2f4ce_vs2nsn.jpg',
       alt: 'Investment App',
-      caption: 'Make investment smooth as breeze',
+      // caption: 'Make investment smooth as breeze',
     },
     {
       image: 'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746184599/all%20folder/6777d050caf0cc9bdaa60c54b2498900f54e598d_otgyjy.jpg',
       alt: 'Payment Platform',
-      caption: 'Make payment smooth as breeze',
+      // caption: 'Make payment smooth as breeze',
     },
     {
       image: 'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746184580/all%20folder/a48d54c848aab8e9403c36955f960ed01ee938a0_pnhspn.jpg',
       alt: 'Corporate Card Website',
-      caption: 'Corporate card that makes your life easier',
+      // caption: 'Corporate card that makes your life easier',
     }
   ];
 
@@ -27,7 +28,7 @@ const OtherProject = () => {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-6">
+    <section className="bg-black text-white ">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-5xl text-left font-technor font-medium mb-6">
           <span className="text-[#A22CFF] font-neue font-regular">03/</span>{' '}
@@ -71,8 +72,8 @@ const OtherProject = () => {
             ))}
           </div>
           <div className="flex gap-4 text-white text-2xl">
-            <button>&lt;</button>
-            <button>&gt;</button>
+            <button><img src={Vector1} alt="Vector" /></button>
+            <button><img src={Vector2} alt="Vector" /></button>
           </div>
         </div>
       </div>

@@ -1,44 +1,33 @@
 import React from 'react';
-import Arrow from '../assets/Image/Arrow.png'
+import Arrow from '../assets/Image/Arrow.png';
+import BgCurve from '../assets/Image/div.png'; // ← make sure the path is correct
+import BgDiagonal from '../assets/Image/div1.png'; // ← make sure the path is correct
 
 const About = () => {
   return (
-    <div className="bg-black text-white w-full px-6 py-20 space-y-16">
-      
-      
-      {/* CTA Top */}
-<div className=" md:flex justify ">
-  {/* Arrow Image at the far left */}
-  <img src={Arrow} alt="Arrow" className="md:absolute md:left-28 md:mb-28 mb-14 h-20" />
+    <div className="relative bg-black text-white w-full md:px-6 py-20  overflow-hidden">
+      {/* Background Elements */}
+      <img
+  src={BgCurve}
+  alt="Background Curve"
+  className="absolute bottom-52 left-10  z-0 md:w-48 md:block hidden pointer-events-none"
+/>
+<img
+  src={BgDiagonal}
+  alt="Background Diagonal Line"
+  className="absolute bottom-52 right-10 z-0 md:w-48 md:block hidden pointer-events-none"
+/>
 
-  {/* Centered Text and Button */}
-  <div className="text-2xl font-technor font-regular md:ml-20   text-left">
-    <button
-      onClick={() => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }}
-    >
-      <span className="text-purple-400">(&lt; CLICK HERE)</span>
-    </button>{' '}
-    <span className="tracking-widest"> IF YOU'D LIKE TO DISCUSS A PROJECT</span>
-  </div>
-</div>
-
-
-      
-
-      {/* Section Header */}
-      <section>
+      {/* Content */}
+      <section className="relative z-10">
         <h2 className="md:text-5xl text-4xl font-technor font-medium text-left mb-6">
           <span className="text-[#A22CFF] font-neue font-regular">02/</span>{' '}
           <span className="text-white">ABOUT ME</span>
         </h2>
 
-        {/* Name and Description */}
-        <h3 className="font-bold text-white text-lg font-technor mb-2 md:ml-36 text-left">Olayinka D. Adeyefa</h3>
+        <h3 className="font-bold text-white text-lg font-technor mb-2 md:ml-36 text-left">
+          Olayinka D. Adeyefa
+        </h3>
         <p className="text-sm text-gray-300 leading-relaxed text-left font-neue font-medium max-w-3xl md:ml-36">
           Asides having worked on various projects ranging from Websites to Brand Identity projects to Pitch Decks and more, 
           My Design versatility are not the extent of my abilities. <br />
@@ -47,8 +36,7 @@ const About = () => {
         </p>
       </section>
 
-      {/* Skills */}
-      <section className="font-neue font-regular max-w-3xl md:ml-36 text-left">
+      <section className="relative z-10 font-neue font-regular max-w-3xl md:ml-36 text-left">
         <p className="text-2xl mb-4">
           I can comfortably contribute to projects with my knowledge and provable experience in the following fields:
         </p>
@@ -65,26 +53,22 @@ const About = () => {
         </p>
       </section>
 
-      {/* CTA Bottom */}
-      <div className="md:flex items-center w-full h-32 gap-4">
-  {/* Image at the start */}
-  <img src={Arrow} alt="Arrow" className="w-20 h-16 mb-5" />
-
-  {/* Centered Text and Button */}
-  <div className="text-3xl font-technor font-regular md:text-center text-left">
-    <button
-      onClick={() => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }}
-    >
-      <span className="text-purple-400">(&lt; CLICK HERE)</span>
-    </button>{' '}
-    <span className="tracking-widest font-technor "> TO GET IN TOUCH</span>
-  </div>
-</div>
+      <div className="relative z-10 mt-10 md:mt-2 md:flex items-center w-full h-32 gap-4 ">
+        <img src={Arrow} alt="Arrow" className="md:h-20 h-10 mb-5" />
+        <div className="text-3xl font-technor font-regular md:text-center text-left">
+          <button
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            <span className="text-purple-400 ">(&lt; CLICK HERE)</span>
+          </button>{' '}
+          <span className="tracking-widest font-technor"> TO GET IN TOUCH</span>
+        </div>
+      </div>
     </div>
   );
 };

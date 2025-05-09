@@ -19,27 +19,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black font-neue font-regular text-white p-4">
-      <div className="max-w-7xl mx-auto font-neue font-regular flex items-start justify-between">
-        {/* Left Section: Name */}
-        <div className="text-2xl font-neue font-medium">Olayinka D. Adeyefa</div>
+    <nav className="bg-black font-neue font-regular  text-white p-4 relative z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Left: Name (Desktop Only) */}
+        <div className="text-2xl hidden md:block font-medium">
+          Olayinka D. Adeyefa
+        </div>
 
-        {/* Right Section: Desktop Content */}
-        <div className="hidden md:flex flex-1 justify-between items-center ml-10">
-          {/* Title */}
-          <div className="text-left ml-10 leading-tight text-lg">
+        {/* Center (Desktop Only) */}
+        <div className="hidden md:flex flex-1 justify-center items-center gap-16">
+          <div className="text-left leading-tight text-lg">
             <p>Head of Operations at</p>
-            <p>at Axel Cyber & Veoc Tech</p>
+            <p>Axel Cyber & Veoc Tech</p>
           </div>
-
-          {/* Status */}
           <div className="text-left text-lg">
             <p>Probably:</p>
             <p className="text-purple-500">At the Gym</p>
           </div>
+        </div>
 
+        {/* Right Section */}
+        <div className="flex items-center gap-4 ml-auto">
           {/* Desktop Nav Links */}
-          <div className="flex space-x-4 text-lg mb-5">
+          <div className="hidden md:flex space-x-4 text-lg">
             {navLinks.map((link, idx) => (
               <span
                 key={idx}
@@ -53,32 +55,32 @@ const Navbar = () => {
               </span>
             ))}
           </div>
-        </div>
 
-        {/* Mobile Toggle - Top Right */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X /> : <Menu />}
-          </button>
+          {/* Mobile Toggle Button (Right aligned) */}
+          <div className="md:hidden mb-5">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Nav Menu */}
       {isOpen && (
-  <div className="absolute right-4 top-16 bg-black border border-gray-700 rounded-md shadow-md p-4 space-y-2 text-sm z-50">
-    {navLinks.map((link, idx) => (
-      <div
-        key={idx}
-        onClick={() => handleScroll(link.id)}
-        className={`cursor-pointer ${
-          link.label === 'Work' ? 'text-purple-500' : ''
-        }`}
-      >
-        {link.label}
-      </div>
-    ))}
-  </div>
-)}
+        <div className="absolute right-4 top-10 text-left bg-black border border-gray-700 rounded-md shadow-md p-4 space-y-2 text-sm z-50">
+          {navLinks.map((link, idx) => (
+            <div
+              key={idx}
+              onClick={() => handleScroll(link.id)}
+              className={`cursor-pointer ${
+                link.label === 'Work' ? 'text-purple-500' : ''
+              }`}
+            >
+              {link.label}
+            </div>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

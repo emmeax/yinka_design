@@ -5,19 +5,19 @@ import Cube from '../assets/Image/Cube.png'
 
 const Home = () => {
   return (
-    <section className="relative text-white mt-8 px-6 py-12 grid md:grid-cols-2 gap-8 overflow-hidden  mb-14">
+    <section className="section-spacing relative text-white  grid md:grid-cols-2 gap-8 overflow-hidden">
       {/* Left Background Shape */}
       <img
         src="https://res.cloudinary.com/ddjnrebkn/image/upload/v1746450325/all%20folder/632af7498246e4b33b327472_Formes-work.svg_1_qu24ok.png"
         alt="Background Shape"
-        className="absolute left-0 top-10 w-80 opacity-70 pointer-events-none"
+        className="absolute left-0 md:block hidden top-10 w-80 opacity-70 pointer-events-none"
       />
 
       {/* Right Background Shape */}
       <img
       src={Cube}
         alt="Cube Shape"
-        className="absolute right-64 top-72 w-32 md:w-40 opacity-70 pointer-events-none"
+        className="absolute right-64 top-60 md:block hidden w-32 md:w-40 opacity-70 pointer-events-none"
       />
 
       {/* Left Text Section */}
@@ -38,7 +38,7 @@ const Home = () => {
         <p className="mt-6 max-w-xl font-neue font-medium md:block hidden text-md">
           I specialize in taking Ideas and Visions from obscurity to execution with problem solving skills, Technology and Systems applied with out of the box thinking.
         </p>
-        <p className="mt-6 max-w-xl font-neue font-medium md:hidden text-sm">
+        <p className="mt-6 max-w-xl font-neue font-medium md:hidden ">
           I deliver high quality design services across multiple fields, helping both individuals and brands bring their ideas to life.
         </p>
 
