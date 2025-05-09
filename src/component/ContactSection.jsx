@@ -74,8 +74,8 @@ const ContactSection = () => {
       <div className="mt-20 font-neue font-regular text-sm md:text-base flex flex-col md:flex-row md:space-x-96 md:justify-start items-start text-white font-light relative z-10">
         <a href="#discuss" className="hover:text-purple-400">Let’s Discuss &gt;</a>
         <div className='flex gap-3'>
-          <p className="flex items-center hidden md:flex">Twitter</p>
-          <p className="flex items-center gap-2 hidden md:flex">Dribbble</p>
+          <p className="flex items-center hidden md:flex">Twitter, Dribbble</p>
+          <p className="flex items-center gap-2 hidden md:flex"></p>
           <p className="flex items-center gap-2 hidden md:flex">LinkedIn</p>
         </div>
         <span className="hidden md:inline">Digital Design</span>

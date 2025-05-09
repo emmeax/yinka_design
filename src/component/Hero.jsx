@@ -73,7 +73,7 @@ const Hero = () => {
       </h2>
 
       {/* Category Filter Buttons */}
-      <div className="flex gap-4 overflow-x-auto scrollbar-hide mb-8 pb-2">
+      <div className="flex md:gap-8 gap-4  overflow-x-auto scrollbar-hide mb-8 pb-2">
         {categories.map((category, index) => (
           <button
             key={index}
