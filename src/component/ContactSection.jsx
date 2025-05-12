@@ -5,44 +5,44 @@ import BigStar from '../assets/Image/BigStar.png';
 
 const ContactSection = () => {
   return (
-    <section className="bg-black text-left text-white md:px-2 py-16 font-technor relative overflow-hidden">
+    <section className="bg-black mr-20 text-left text-white py-16 font-technor relative overflow-hidden">
       {/* Background Star Image */}
       <img
         src={BigStar}
         alt="Decorative Star"
-        className="absolute right-96 md:block hidden top-20 w-64 opacity-80 pointer-events-none z-0"
+        className="absolute right-96 md:block hidden top-12 w-64 opacity-80 pointer-events-none z-0"
       />
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
         {/* Left Content */}
         <div className="space-y-6">
-          <h2 className="text-5xl font-technor font-medium text-left">
+          <h2 className="md:text-5xl text-3xl font-technor font-medium text-left ">
             <span className="text-[#A22CFF] font-neue font-regular">04/</span>{' '}
             CONTACT ME
           </h2>
 
-          <p className="text-lg font-technor md:ml-36">WANT TO DISCUSS A PROJECT?</p>
+          <p className="text-2xl font-technor md:ml-24">WANT TO DISCUSS A PROJECT?</p>
 
-          <p className="font-neue font-medium md:ml-36">Feel free to reach me via email at</p>
+          <p className="font-neue text-2xl font-medium md:ml-24">Feel free to reach me via email at</p>
           <a
             href="mailto:xd.olayinka@gmail.com"
-            className="text-purple-400 hover:underline block font-neue font-medium md:ml-36"
+            className="text-purple-400 text-2xl hover:underline block font-neue font-medium md:ml-24"
           >
             xd.olayinka@gmail.com
           </a>
 
-          <p className="font-neue font-medium md:ml-36">
+          <p className="font-neue text-lg font-medium md:ml-24">
             Or connect with me via phone call at{' '}
             <a
               href="tel:+2349099346124"
-              className="text-purple-500 hover:underline"
+              className="text-purple-500  hover:underline"
             >
               +234 9099346124
             </a>
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4 mt-4 md:ml-36">
+          <div className="flex items-center gap-4 mt-4 md:ml-24">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://res.cloudinary.com/ddjnrebkn/image/upload/v1746187692/all%20folder/db48a07deffac2ab8c10f1ffad9d1a6ac452d5b2_1_todasc.png"

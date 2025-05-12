@@ -68,17 +68,22 @@ const Hero = () => {
   return (
     <div className="text-white w-full overflow-hidden">
       {/* Heading */}
-      <h2 className="text-3xl md:text-6xl font-bold text-left mb-10">
-        <span className="text-purple-500 font-neue">01/</span> COMPETENCIES & PROJECTS
+      <h2 className="text-3xl md:text-6xl text- hidden md:block font-bold text-left mb-10">
+        <span className="text-purple-500 font-technor font-medium font-neue">01/</span> COMPETENCIES & PROJECTS
+      </h2>
+      <h2 className="text-3xl md:hidden block font-technor font-medium md:text-6xl font-bold text-left mb-10">
+        <span className="text-purple-500 font-neue">01/</span> SKILLSETS & <span className='ml-12'>PROJECTS</span> 
       </h2>
 
       {/* Category Filter Buttons */}
-      <div className="flex md:gap-8 gap-4  overflow-x-auto scrollbar-hide mb-8 pb-2">
+      <div className="flex md:gap-9 gap-4  overflow-x-auto scrollbar-hide mb-8 pb-2">
         {categories.map((category, index) => (
           <button
             key={index}
             onClick={() => setSelectedCategory(category)}
-            className={`px-8 py-3 rounded-xl text-nowrap text-2xl md:text-base font-medium border transition-all duration-300
+            className={`md:px-8 px-6 py-2 ${
+              category === 'All' ? 'rounded-2xl' : 'rounded-xl'
+            } text-nowrap text-lg  font-medium border transition-all duration-300
               ${
                 selectedCategory === category
                   ? 'bg-white text-purple-600 border-purple-500'
@@ -130,8 +135,8 @@ const Hero = () => {
 
       {/* CTA Section */}
       <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-16">
-        <img src={Arrow} alt="Arrow" className="h-16 md:h-20 md:ml-4" />
-        <div className="text-xl md:text-2xl font-technor font-regular text-left">
+        <img src={Arrow} alt="Arrow" className="h-14  md:h-20 md:ml-4" />
+        <div className=" md:text-2xl font-technor font-regular text-left">
           <button
             onClick={() => {
               const contactSection = document.getElementById('contact');
@@ -140,9 +145,9 @@ const Hero = () => {
               }
             }}
           >
-            <span className="text-purple-400">(&lt; CLICK HERE)</span>
-          </button>{' '}
-          <span className="tracking-widest"> IF YOU'D LIKE TO DISCUSS A PROJECT</span>
+            <span className="text-purple-400 text-3xl">(&lt; CLICK HERE)</span>
+          </button>
+          <span className="tracking-widest text-3xl ml-7">IF YOU'D LIKE TO DISCUSS A PROJECT</span>
         </div>
       </div>
     </div>

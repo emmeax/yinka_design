@@ -30,7 +30,7 @@ const OtherProject = () => {
   return (
     <section className="bg-black text-white ">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl text-left font-technor font-medium mb-6">
+        <h2 className="md:text-5xl text-3xl text-left font-technor font-medium mb-6">
           <span className="text-[#A22CFF] font-neue font-regular">03/</span>{' '}
           <span className="text-white">Other projects</span>
         </h2>
