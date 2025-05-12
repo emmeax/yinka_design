@@ -123,7 +123,7 @@ const Hero = () => {
               {project.tags?.map((tag, i) => (
                 <span
                   key={i}
-                  className="text-xs px-4 py-2 rounded-lg border border-white text-white"
+                  className="text-xs px-4 py-2 mt-2 rounded-lg border border-white text-white"
                 >
                   {tag}
                 </span>
@@ -145,7 +145,7 @@ const Hero = () => {
               }
             }}
           >
-            <span className="text-purple-400 text-3xl">(&lt; CLICK HERE)</span>
+            <span className="text-purple-400 text-3xl md:ml-20">(&lt; CLICK HERE)</span>
           </button>
           <span className="tracking-widest text-3xl ml-7">IF YOU'D LIKE TO DISCUSS A PROJECT</span>
         </div>

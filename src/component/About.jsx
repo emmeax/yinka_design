@@ -54,7 +54,7 @@ const About = () => {
       </section>
 
       <div className="relative z-10 mt-10 md:mt-2 md:flex items-center w-full h-32 gap-4 ">
-        <img src={Arrow} alt="Arrow" className="md:h-20 h-10 mb-5" />
+        <img src={Arrow} alt="Arrow" className="md:h-20 h-14 mb-5" />
         <div className="text-3xl font-technor font-regular md:text-center text-left">
           <button
             onClick={() => {
@@ -64,9 +64,9 @@ const About = () => {
               }
             }}
           >
-            <span className="text-purple-400 ">(&lt; CLICK HERE)</span>
+            <span className="text-purple-400 md:ml-16 ">(&lt; CLICK HERE)</span>
           </button>{' '}
-          <span className="tracking-widest font-technor"> TO GET IN TOUCH</span>
+          <span className="tracking-widest font-technor ml-7"> TO GET IN TOUCH</span>
         </div>
       </div>
     </div>
