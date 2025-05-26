@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Arrow from '../assets/Image/Arrow.png';
+import Formeswork from '../assets/Image/Formeswork.png';
+import Cube from '../assets/Image/Cube.png'
 
 const Hero = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -66,7 +68,12 @@ const Hero = () => {
       : allProjects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="text-white w-full overflow-hidden">
+    <div className="text-white w-full overflow-hidden md:py-28 py-10">
+
+
+      {/* Background Shape – Top Right (Cube.png) */}
+      <img src={Formeswork} alt="" className='absolute hidden  md:block top-3/4 w-72 mt-20' />
+      <img src={Cube} alt="" className='absolute hidden md:block -bottom-80  right-80 w-32' />
       {/* Heading */}
       <h2 className="text-3xl md:text-6xl text- hidden md:block font-bold text-left mb-10">
         <span className="text-purple-500 font-technor font-medium font-neue">01/</span> COMPETENCIES & PROJECTS
@@ -76,7 +83,7 @@ const Hero = () => {
       </h2>
 
       {/* Category Filter Buttons */}
-      <div className="flex md:gap-9 gap-4  overflow-x-auto scrollbar-hide mb-8 pb-2">
+      <div className="flex md:gap-9 gap-4  overflow-x-auto scrollbar-hide mb-14 pb-2">
         {categories.map((category, index) => (
           <button
             key={index}

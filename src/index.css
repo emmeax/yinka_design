@@ -9,7 +9,7 @@
 }
 
 html, body, #root {
-  height: 100%;
+  
   background-color: #000;
 }
 
@@ -82,7 +82,5 @@ html, body, #root {
   scrollbar-width: none;     /* Firefox */
 }
 
-.section-spacing {
-  @apply my-16 md:my-24;
-}
+
 

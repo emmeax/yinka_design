@@ -6,6 +6,7 @@ import Home from './component/Home'
 import Navbar from './component/Navbar'
 import OtherProject from './component/OtherProject'
 import ContactSection from './component/ContactSection'
+
 function App() {
   
 

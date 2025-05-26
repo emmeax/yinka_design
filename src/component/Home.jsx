@@ -1,24 +1,12 @@
 import React from 'react';
 import Profilepics from '../assets/Image/Profilepics.png';
-import Cube from '../assets/Image/Cube.png'
+
 
 
 const Home = () => {
   return (
-    <section className="section-spacing relative text-white  grid md:grid-cols-2 gap-8 overflow-hidden">
-      {/* Left Background Shape */}
-      <img
-        src="https://res.cloudinary.com/ddjnrebkn/image/upload/v1746450325/all%20folder/632af7498246e4b33b327472_Formes-work.svg_1_qu24ok.png"
-        alt="Background Shape"
-        className="absolute left-0 md:block hidden top-10 w-80 opacity-70 pointer-events-none"
-      />
-
-      {/* Right Background Shape */}
-      <img
-      src={Cube}
-        alt="Cube Shape"
-        className="absolute right-64 top-60 md:block hidden w-32 md:w-40 opacity-70 pointer-events-none"
-      />
+    <section className="section-spacing relative text-white mb-9 grid md:grid-cols-2 gap-8 overflow-hidden ">
+     
 
       {/* Left Text Section */}
       <div className="relative z-10 ml-0 md:ml-20 text-left">
