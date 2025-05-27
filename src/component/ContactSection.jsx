@@ -5,7 +5,7 @@ import Hand from "../assets/Image/Hand.png"
 
 const ContactSection = () => {
   return (
-    <section className="bg-black w-full text-left text-white py-16 px-10 font-technor relative overflow-hidden">
+    <section className="bg-black w-full text-left text-white py-16  font-technor relative overflow-hidden">
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
         {/* Left Content */}
@@ -36,13 +36,14 @@ const ContactSection = () => {
         </div>
 
         {/* Right Hand Image — stays within section, not scrolling */}
-        <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 z-0">
+        
+      </div>
+      <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 z-0">
           <img src={Hand} alt="Pointing Hand" className="w-64" />
         </div>
-      </div>
 
       {/* Bottom Footer Row */}
-      <div className="mt-20 px-6 md:px-12 font-neue hidden md:flex text-sm md:text-base justify-between items-center">
+      <div className="mt-20   font-neue hidden md:flex text-sm md:text-base justify-between items-center">
         <a href="#discuss" className="hover:text-purple-400 flex items-center gap-1">
           <p>Let’s</p>
           <p>Discuss</p>
@@ -53,15 +54,15 @@ const ContactSection = () => {
           <p className="hidden md:inline ml-2">Dribbble,</p>
           <p className="hidden md:inline ml-5">LinkedIn</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 mr-20">
           <span>Digital</span>
           <span>Design</span>
         </div>
       </div>
 
       {/* BigStar Image at Bottom Center */}
-      <div className="absolute bottom-0 left-2/3 transform -translate-x-1/2 z-0">
-        <img src={BigStar} alt="Star" className="w-44 h-20 mr-44" />
+      <div className="absolute bottom-0 left-2/4 transform -translate-x-1/2 z-0">
+        <img src={BigStar} alt="Star" className="w-52 h-20 ml-32" />
       </div>
     </section>
   );

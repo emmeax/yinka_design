@@ -65,22 +65,22 @@ const About = () => {
       <Skills />
 
       {/* CTA */}
-      <div className="relative z-10  md:mt-2 md:flex items-center w-full h-32 gap-4">
-        <img src={Arrow} alt="Arrow" className="md:h-20 h-14 mb-5" />
-        <div className="text-3xl font-technor font-regular md:text-center text-left">
-          <button
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            <span className="text-purple-400 md:ml-16">(&lt; CLICK HERE)</span>
-          </button>{' '}
-          <span className="tracking-widest font-technor ml-7 mb-10"> TO GET IN TOUCH</span>
-        </div>
-      </div>
+       <div className="flex flex-col md:flex-row items-start md:items-center gap-4  mb-14">
+              <img src={Arrow} alt="Arrow" className="h-14  md:h-20 md:ml-4" />
+              <div className=" md:text-2xl font-technor font-regular text-left">
+                <button
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  <span className="text-purple-400 text-3xl md:ml-20">(&lt; CLICK HERE)</span>
+                </button>
+                <span className="tracking-widest text-3xl ml-7">TO GET IN TOUCH </span>
+              </div>
+            </div>
     </div>
   );
 };
