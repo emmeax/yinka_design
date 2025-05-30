@@ -40,7 +40,7 @@ const Home = () => {
         <img
           src={Profilepics}
           alt="Olayinka"
-          className="rounded-lg md:w-48 w-80 h-auto object-cover md:mb-14"
+          className="rounded-lg md:w-56 w-80 h-auto object-cover md:mb-14"
         />
       </div>
     </section>
