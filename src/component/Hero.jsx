@@ -73,7 +73,7 @@ const Hero = () => {
 
       {/* Background Shape – Top Right (Cube.png) */}
       <img src={Formeswork} alt="" className='absolute hidden  md:block top-3/4 w-72 mt-52' />
-      <img src={Cube} alt="" className='absolute hidden md:block -bottom-80  right-80 w-32' />
+      <img src={Cube} alt="" className='absolute hidden md:block -bottom-3/4  right-80 w-32' />
       {/* Heading */}
       <h2 className="text-3xl md:text-6xl text- hidden md:block font-bold text-left mb-10">
         <span className="text-purple-500 font-technor font-medium font-neue">01/</span> COMPETENCIES & PROJECTS
