@@ -5,11 +5,11 @@ import Profilepics from '../assets/Image/Profilepics.png';
 
 const Home = () => {
   return (
-    <section className="section-spacing relative text-white mb-9 grid md:grid-cols-2 gap-8 overflow-hidden ">
+    <section className="section-spacing relative  py-14 text-white mb-9 grid md:grid-cols-2 gap-8 overflow-hidden ">
      
 
       {/* Left Text Section */}
-      <div className="relative z-10 ml-0 md:ml-20 text-left">
+      <div className="relative z-10 ml-0 md:ml-24 text-left">
         <h1 className="text-4xl md:text-6xl font-technor font-medium leading-tight">
           <span className="md:block hidden">CREATIVE</span>
           <span className="md:block hidden">DIRECTOR & PM</span>
@@ -23,7 +23,7 @@ const Home = () => {
           4+ years of experience
         </p>
 
-        <p className="mt-6 max-w-xl font-neue font-medium md:block hidden text-md">
+        <p className="mt-6 max-w-xl font-neue font-medium md:block hidden text-lg">
           I specialize in taking Ideas and Visions from obscurity to execution with problem solving skills, Technology and Systems applied with out of the box thinking.
         </p>
         <p className="mt-6 max-w-xl font-neue font-medium md:hidden ">

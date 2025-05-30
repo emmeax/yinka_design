@@ -42,7 +42,7 @@ const SkillsChart = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
-    <div className="bg-black text-white   py-10">
+    <div className="bg-black text-white font-neue py-10">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white flex gap-2 items-center">
         <Award className="text-purple-500" />
         <span>Skills</span>
@@ -51,7 +51,7 @@ const SkillsChart = () => {
       <div className={`flex flex-col ${isMobile ? '' : 'md:flex-row'}   `}>
         {/* Technical Skills */}
         <div className="w-full md:w-1/2 ">
-          <h3 className="text-xl text-center  md:mr-48 md:ml-0 ml-5 text-white  ">Technical Skills</h3>
+          <h3 className="text-xl text-center  md:mr-20 md:ml-0 ml-5 text-white  ">Technical Skills</h3>
           <ResponsiveContainer width="103%" height={isMobile ? 500 : 400}>
   <BarChart
     layout="vertical"
@@ -64,7 +64,7 @@ const SkillsChart = () => {
       dataKey="name"
       type="category"
       tick={{ fill: '#A22CFF', fontSize: 15 }}
-      width={30}
+      width={100}
     />
     <Tooltip content={<CustomTooltip />} />
     <Bar dataKey="value" fill="white" barSize={28} />
@@ -75,7 +75,7 @@ const SkillsChart = () => {
 
         {/* Soft Skills */}
         <div className="w-full md:w-1/2 ">
-          <h3 className="text-xl text-center text-white md:mr-64  sm:ml-4">Soft Skills</h3>
+          <h3 className="text-xl text-center text-white md:mr-32  sm:ml-4">Soft Skills</h3>
           <ResponsiveContainer width="100%" height={isMobile ? 500 : 400}>
             <BarChart
               layout="vertical"
@@ -88,7 +88,7 @@ const SkillsChart = () => {
                 dataKey="name"
                 type="category"
                 tick={{ fill: '#A22CFF', fontSize: 15 }}
-                width={20}
+                width={100}
               />
               <Tooltip content={<CustomTooltip />} />
               <Bar dataKey="value" fill="white" barSize={28}>
