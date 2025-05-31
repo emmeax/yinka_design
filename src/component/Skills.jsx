@@ -51,7 +51,7 @@ const SkillsChart = () => {
       <div className={`flex flex-col ${isMobile ? '' : 'md:flex-row'}   `}>
         {/* Technical Skills */}
         <div className="w-full md:w-1/2 ">
-          <h3 className="text-xl text-center  md:mr-20 md:ml-0 ml-5 text-white  ">Technical Skills</h3>
+          <h3 className="text-xl text-center  md:mr-44 md:ml-0 ml-20 text-white  ">Technical Skills</h3>
           <ResponsiveContainer width="103%" height={isMobile ? 500 : 400}>
   <BarChart
     layout="vertical"
@@ -64,7 +64,7 @@ const SkillsChart = () => {
       dataKey="name"
       type="category"
       tick={{ fill: '#A22CFF', fontSize: 15 }}
-      width={100}
+      width={50}
     />
     <Tooltip content={<CustomTooltip />} />
     <Bar dataKey="value" fill="white" barSize={28} />
@@ -75,7 +75,7 @@ const SkillsChart = () => {
 
         {/* Soft Skills */}
         <div className="w-full md:w-1/2 ">
-          <h3 className="text-xl text-center text-white md:mr-32  sm:ml-4">Soft Skills</h3>
+          <h3 className="text-xl text-center text-white md:mr-56 md:ml-0 ml-12">Soft Skills</h3>
           <ResponsiveContainer width="100%" height={isMobile ? 500 : 400}>
             <BarChart
               layout="vertical"
@@ -88,7 +88,7 @@ const SkillsChart = () => {
                 dataKey="name"
                 type="category"
                 tick={{ fill: '#A22CFF', fontSize: 15 }}
-                width={100}
+                width={50}
               />
               <Tooltip content={<CustomTooltip />} />
               <Bar dataKey="value" fill="white" barSize={28}>

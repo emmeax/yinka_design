@@ -33,10 +33,10 @@ const About = () => {
           <span className="text-white">ABOUT ME</span>
         </h2>
 
-        <h3 className="font-bold text-white text-lg font-technor mb-5 md:ml-36 text-left">
+        <h3 className="font-bold text-white text-3xl text-xl font-technor mb-5 md:ml-36 text-left">
           Olayinka D. Adeyefa
         </h3>
-        <p className="text-lg text-white leading-relaxed text-left mb-12 font-neue font-medium max-w-3xl md:ml-36">
+        <p className="text-lg text-slate-300 leading-relaxed text-left mb-12 font-neue font-medium max-w-3xl md:ml-36">
           Asides having worked on various projects ranging from Websites to Brand Identity projects to Pitch Decks and more, 
           My Design versatility are not the extent of my abilities. <br />
           I have experience as a Creative director and Project/Product Manager delivering over a dozen projects successfully in the last year alone, 
