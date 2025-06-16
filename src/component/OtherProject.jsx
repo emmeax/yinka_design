@@ -29,7 +29,7 @@ const OtherProject = () => {
 
   return (
     <section className="bg-black text-white ">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full mx-auto">
         <div className='flex gap-3 md:hidden block mb-4'>
            <img src="https://res.cloudinary.com/ddjnrebkn/image/upload/v1746187686/all%20folder/e4a6dce810ad7603d54f2b136f584ad098a74bdb_ewkq9k.png" className='h-10' alt="" />
            <img src="https://res.cloudinary.com/ddjnrebkn/image/upload/v1746187692/all%20folder/db48a07deffac2ab8c10f1ffad9d1a6ac452d5b2_1_todasc.png" className='h-10' alt="" />
