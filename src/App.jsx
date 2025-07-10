@@ -6,13 +6,16 @@ import Home from './component/Home'
 import Navbar from './component/Navbar'
 import OtherProject from './component/OtherProject'
 import ContactSection from './component/ContactSection'
+import Faq from './component/Faq'
+// import Testimonial from './component/Testimonial'
+import GetInTouch from './component/GetInTouch'
 
 function App() {
   
 
   return (
     <>
-      <div className='min-h-screen bg-[#000000] text-white '>
+      <div className=' bg-[#000000] text-white '>
         <Navbar/>
         <Home/>
         <Hero/>
@@ -24,6 +27,15 @@ function App() {
         </section>
         <section id='contact'>
         <ContactSection/>
+        </section>
+        {/* <section>
+        <Testimonial/>
+        </section> */}
+        <section>
+        <Faq/>
+        </section>
+        <section>
+        <GetInTouch/>
         </section>
         
         

@@ -33,6 +33,7 @@ const expertiseData = [
       'Understanding of financial regulations and banking systems is important for AI products in fintech and financial services.',
   },
 ];
+
 const mobileExpertiseData = [
   {
     title: (
@@ -50,68 +51,81 @@ const mobileExpertiseData = [
       </>
     ),
   },
-  
   {
-    title:(
+    title: (
       <>
-      Generative <br /> AI
+        Generative <br /> AI
       </>
     ),
-    description:(
+    description: (
       <>
-      Deep understanding of large <br /> language models and generative <br /> AI applications is increasingly <br /> required across multiple <br />industries.
+        Deep understanding of large <br />
+        language models and generative <br />
+        AI applications is increasingly <br />
+        required across multiple <br />
+        industries.
       </>
-    ),
-      
-  },
-  {
-    title:(
-    <> 
-    Manufacturing & <br /> Electronics
-    </>
-    ),
-    description:
-      (
-    <> 
-    Knowledge of manufacturing<br /> processes and electronics is<br /> valuable for AI product<br /> roles in industrial settings.
-    </>
     ),
   },
   {
     title: (
-    <>
-    E-commerce &<br /> Retail
-    </>
+      <>
+        Manufacturing & <br /> Electronics
+      </>
     ),
-    description:(
-    <>
-    Understanding of online retail<br /> platforms and consumer behavior<br /> is important for AI product<br /> roles in e-commerce.,
-    </>
+    description: (
+      <>
+        Knowledge of manufacturing <br />
+        processes and electronics is <br />
+        valuable for AI product <br />
+        roles in industrial settings.
+      </>
     ),
-      
   },
   {
     title: (
-    <>
-    Healthcare & Life Sciences
-    </>
+      <>
+        E-commerce &<br /> Retail
+      </>
     ),
-    description:(
-    <>
-    Knowledge of healthcare<br /> regulations and clinical workflows<br /> is crucial for AI products<br /> in medical applications.
-    </>
+    description: (
+      <>
+        Understanding of online retail <br />
+        platforms and consumer behavior <br />
+        is important for AI product <br />
+        roles in e-commerce.
+      </>
     ),
   },
   {
-    title:(
-    <>
-    Financial Services
-    </>
+    title: (
+      <>
+        Healthcare & Life Sciences
+      </>
     ),
-    description:(
-    <>
-    Understanding of financial<br /> regulations and banking <br />systems is important for<br /> AI products in fintech and<br /> financial services.
-    </>
+    description: (
+      <>
+        Knowledge of healthcare <br />
+        regulations and clinical workflows <br />
+        is crucial for AI products <br />
+        in medical applications.
+      </>
+    ),
+  },
+  {
+    title: (
+      <>
+        Financial Services
+      </>
+    ),
+    description: (
+      <>
+        Understanding of financial <br />
+        regulations and banking <br />
+        systems is important for <br />
+        AI products in fintech and <br />
+        financial services.
+      </>
     ),
   },
 ];
@@ -121,20 +135,20 @@ const DomainExpertise = () => {
     <div className="bg-black text-white w-full py-20">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white text-left flex items-center gap-2">
-          <span>
-            <img src={database} alt="Database Icon" className="h-8 w-8" />
-          </span>
+          <img src={database} alt="Database Icon" className="h-8 w-8" />
           <span>Domain Expertise</span>
         </h2>
         <p className="text-gray-300 mb-12 text-lg text-left">
           Beyond general AI product management skills, domain-specific expertise is increasingly important:
         </p>
 
-        <div className="flex md:grid md:grid-cols-3 hidden md:block  text-left gap-6 overflow-x-auto hidden ">
+        {/* Desktop Section */}
+        <div className="md:grid md:grid-cols-3 gap-6 hidden md:grid">
           {expertiseData.map((item, index) => (
             <div
               key={index}
-              className={`min-w-[250px] md:min-w-0 rounded-lg p-6 flex-shrink-0 transition
+              className={`min-w-[250px] md:min-w-0 rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform
+                hover:scale-[1.03] hover:shadow-lg hover:border hover:border-purple-600
                 ${index === 0
                   ? 'bg-gradient-to-r from-purple-800 to-black'
                   : 'bg-[#1a1a1a]'
@@ -149,11 +163,14 @@ const DomainExpertise = () => {
             </div>
           ))}
         </div>
-        <div className="flex md:hidden block text-left gap-6 overflow-x-auto scrollbar-hide ">
+
+        {/* Mobile Scroll Section */}
+        <div className="flex md:hidden gap-6 overflow-x-auto scrollbar-hide">
           {mobileExpertiseData.map((item, index) => (
             <div
               key={index}
-              className={`min-w-[250px] md:min-w-0 rounded-lg p-6 flex-shrink-0 transition
+              className={`min-w-[250px] rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform
+                hover:scale-[1.03] hover:shadow-lg hover:border hover:border-purple-600
                 ${index === 0
                   ? 'bg-gradient-to-r from-purple-800 to-black'
                   : 'bg-[#1a1a1a]'

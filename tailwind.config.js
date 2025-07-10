@@ -9,6 +9,7 @@ export default {
       fontFamily:{
         neue: ['NeueMontreal', 'sans-serif'],
         technor: ['"Technor"', 'sans-serif'],
+        syne: ['Syne', 'sans-serif'],
       }
     },
   },
