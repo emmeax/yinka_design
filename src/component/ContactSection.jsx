@@ -37,6 +37,7 @@ const testimonialVideos = [
       "https://res.cloudinary.com/ddjnrebkn/image/upload/v1752137356/all%20folder/7042a84b3d6a7edb0157de0a7bf383dd2673a1be_1_jixrit.jpg",
     name: "Paul Jake",
     role: "Product manager, Wise",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     videoThumb:
@@ -45,6 +46,7 @@ const testimonialVideos = [
       "https://res.cloudinary.com/ddjnrebkn/image/upload/v1752137356/all%20folder/7042a84b3d6a7edb0157de0a7bf383dd2673a1be_1_jixrit.jpg",
     name: "Jane Smith",
     role: "Marketing Lead, Stripe",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     videoThumb:
@@ -53,6 +55,7 @@ const testimonialVideos = [
       "https://res.cloudinary.com/ddjnrebkn/image/upload/v1752137356/all%20folder/7042a84b3d6a7edb0157de0a7bf383dd2673a1be_1_jixrit.jpg",
     name: "Tolu Adebayo",
     role: "Design Director, Paystack",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
     videoThumb:
@@ -148,108 +151,126 @@ const ContactSection = () => {
       <div className="absolute  left-2/4 transform -translate-x-1/2 z-0">
         <img src={BigStar} alt="Star" className="w-52 h-20 ml-32" />
       </div>
-      <h2 className="text-2xl md:text-5xl font-bold mb-10 py-32 mr-10 font-technor font-regular text-left">
-              <span className="text-purple-500 font-neue font-regular">06/</span> TESTIMONIAL
-            </h2>
-      
-            {/* Top Images Scroll */}
-            <div className="md:hidden overflow-x-auto mb-6 scrollbar-hide ">
-              <div className="flex gap-32 ">
-                {image.slice(0, 3).map((img, i) => (
-                  <img key={i} src={img} className="rounded-xl w-1/2 h-32 object-cover" />
-                ))}
-              </div>
-            </div>
-      
-            <p className="md:hidden text-center text-lg font-neue font-medium text-white/80 mb-6">
-              Trusted by top companies <br /> from various industries
-            </p>
-      
-            <div className="md:hidden overflow-x-auto mb-16 scrollbar-hide">
-              <div className="flex gap-32 ">
-                {image.slice(4, 6).map((img, i) => (
-                  <img key={i} src={img} className="rounded-xl w-1/2 h-36 object-cover" />
-                ))}
-              </div>
-            </div>
-      
-            {/* Desktop Image Layout */}
-            <div className="hidden md:flex md:flex-row md:justify-start md:gap-16 md:px-20 mb-16">
-              <div className="flex flex-col gap-4">
-                {images.slice(0, 3).map((img, i) => (
-                  <img key={i} src={img} className="rounded-xl w-32 h-32 object-cover" />
-                ))}
-              </div>
-              <div className="flex gap-6 items-center">
-                {images.slice(3, 7).map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    className={`rounded-xl w-32 h-60 object-cover ${i === 1 || i === 2 ? "mb-32" : ""}`}
-                  />
-                ))}
-              </div>
-              <div className="flex flex-col gap-4">
-                {images.slice(7, 10).map((img, i) => (
-                  <img key={i} src={img} className="rounded-xl w-32 h-32 object-cover" />
-                ))}
-              </div>
-            </div>
-      
-            {/* Testimonial Videos */}
-                  <div className="md:grid md:grid-cols-4 md:px-20 md:gap-12 mb-16 overflow-x-auto px-10 flex gap-6 snap-x">
-              {testimonialVideos.map((item, i) => (
-                <div
-                  key={i}
-                  className="min-w-[250px] md:w-full rounded-xl overflow-hidden shadow-md bg-[#111] snap-start"
-                >
-                  <div className="relative w-full h-64 group">
-                    <video
-                      ref={(el) => (videoRefs.current[i] = el)}
-                      src={item.video}
-                      poster={item.videoThumb}
-                      className="w-full h-full object-cover"
-                      controls
-                      onEnded={() => handleEnded(i)}
-                    />
-                    {/* <button
-                      onClick={() => handlePlayPause(i)}
-                      className="absolute bottom-2 left-2 bg-black/60 p-2 rounded-full text-white z-10"
-                    >
-                      <FaPlay className="text-lg" />
-                    </button> */}
-                  </div>
-                  <div className="flex items-center gap-3 p-4">
-                    <img src={item.avatar} className="w-8 h-8 rounded-full object-cover" />
-                    <div>
-                      <p className="text-white font-syne  font-medium text-sm">{item.name}</p>
-                      <p className="text-xs font-neue font-regular text-white/60">{item.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-      
-            {/* Written Testimonials */}
-            <div className="md:grid md:grid-cols-3 md:px-20 px-10 gap-8 overflow-x-auto flex snap-x">
-              {images.slice(2, 5).map((img, i) => (
-                <div key={i} className="min-w-[300px] bg-black/30 p-4 rounded-xl border border-white/10 shadow-md snap-start">
-                  <div className="flex gap-1 text-yellow-400 mb-2">
-                    {Array(5).fill(0).map((_, idx) => <FaStar key={idx} />)}
-                  </div>
-                  <p className="mb-4 text-left font-neue font-regular">
-                    I love his work so much. I was able to rely on this agency to deliver the MVP of our product in less than 2 months (from discovery session to delivering prototypes). You should definitely give him a try.
-                  </p>
-                  <div className="flex items-center gap-2 mt-2">
-                    <img src={img} className="w-8 h-8 rounded-full object-cover" />
-                    <div>
-                      <p className="text-xl font-medium text-purple-400 text-left font-syne text-[#A22CFF]">Paul Jake</p>
-                      <p className="text-xs font-neue font-medium text-white/50">Product manager, Wise</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+     <h2 className="text-2xl md:block hidden md:text-5xl font-bold mb-10 py-32 mr-10 font-technor font-regular text-left">
+  <span className="text-purple-500 font-neue font-regular">06/</span> TESTIMONIAL
+</h2>
+
+{/* Top Images Scroll */}
+<div className="md:hidden overflow-x-auto mb-6 scrollbar-hide md:mt-10 mt-10">
+  <div className="flex gap-32">
+    {image.slice(0, 3).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        className="rounded-xl w-1/2 h-32 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+      />
+    ))}
+  </div>
+</div>
+
+<p className="md:hidden text-center text-lg font-neue font-medium text-white/80 mb-6">
+  Trusted by top companies <br /> from various industries
+</p>
+
+<div className="md:hidden overflow-x-auto mb-16 scrollbar-hide">
+  <div className="flex gap-32">
+    {image.slice(4, 7).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        className="rounded-xl w-1/2 h-36 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+      />
+    ))}
+  </div>
+</div>
+
+{/* Desktop Image Layout */}
+<div className="hidden md:flex md:flex-row md:justify-start md:gap-16 md:px-20 mb-16">
+  <div className="flex flex-col gap-4">
+    {images.slice(0, 3).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        className="rounded-xl w-32 h-32 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+      />
+    ))}
+  </div>
+  <div className="flex gap-6 items-center">
+    {images.slice(3, 7).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        className={`rounded-xl w-32 h-60 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl ${i === 1 || i === 2 ? "mb-32" : ""}`}
+      />
+    ))}
+  </div>
+  <div className="flex flex-col gap-4">
+    {images.slice(7, 10).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        className="rounded-xl w-32 h-32 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+      />
+    ))}
+  </div>
+</div>
+
+{/* Testimonial Videos */}
+<div className="md:grid md:grid-cols-4 md:px-20 md:gap-12 mb-16 overflow-x-auto px-10 flex gap-6 snap-x">
+  {testimonialVideos.map((item, i) => (
+    <div
+      key={i}
+      className="min-w-[250px] md:w-full rounded-xl overflow-hidden shadow-md bg-[#111] snap-start hover:scale-[1.02] hover:shadow-lg transition-transform duration-300 ease-in-out"
+    >
+      <div className="relative w-full h-64 group">
+        <video
+          ref={(el) => (videoRefs.current[i] = el)}
+          src={item.video}
+          poster={item.videoThumb}
+          className="w-full h-full object-cover"
+          controls
+          onEnded={() => handleEnded(i)}
+        />
+      </div>
+      <div className="flex items-center gap-3 p-4">
+        <img src={item.avatar} className="w-8 h-8 rounded-full object-cover" />
+        <div>
+          <p className="text-white font-syne font-medium text-sm">{item.name}</p>
+          <p className="text-xs font-neue font-regular text-white/60">{item.role}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+{/* Written Testimonials */}
+<div className="md:grid md:grid-cols-3 md:px-20 px-10 gap-8 overflow-x-auto flex snap-x">
+  {images.slice(2, 5).map((img, i) => (
+    <div
+      key={i}
+      className="min-w-[300px] bg-black/30 p-4 rounded-xl border border-white/10 shadow-md snap-start hover:scale-[1.02] hover:shadow-lg transition-transform duration-300 ease-in-out"
+    >
+      <div className="flex gap-1 text-yellow-400 mb-2">
+        {Array(5)
+          .fill(0)
+          .map((_, idx) => (
+            <FaStar key={idx} />
+          ))}
+      </div>
+      <p className="mb-4 text-left font-neue font-regular">
+        I love his work so much. I was able to rely on this agency to deliver the MVP of our product in less than 2 months (from discovery session to delivering prototypes). You should definitely give him a try.
+      </p>
+      <div className="flex items-center gap-2 mt-2">
+        <img src={img} className="w-8 h-8 rounded-full object-cover" />
+        <div>
+          <p className="text-xl font-medium text-purple-400 text-left font-syne text-[#A22CFF]">Paul Jake</p>
+          <p className="text-xs font-neue font-medium text-white/50">Product manager, Wise</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 };

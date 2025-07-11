@@ -2,11 +2,10 @@ import React from "react";
 import { PhoneCall } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import Frame from '../assets/Image/Frame 2087326832.png'
-import secFrame from '../assets/Image/Frame 2087326832.png'
 
 const GetInTouch = () => {
   return (
-    <section id="contact" className="w-full bg-black text-white py-16  ">
+    <section id="contact" className="w-full bg-black text-white py-16  md:block hidden">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className=" flex mb-6 gap-5">
@@ -15,7 +14,7 @@ const GetInTouch = () => {
         </div>
 
         {/* Card */}
-        <div className="md:bg-[#5D0ECC] bg-[#A22CFF] rounded-2xl  flex flex-col md:flex-row items-center justify-between text-left py-8 p-28 relative">
+        <div className="md:bg-[#5D0ECC] bg-[#A22CFF] rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between text-left p-28 relative">
           {/* Left Side */}
           <div className="flex-1">
             <h3 className="text-white text-3xl md:text-4xl font-neue font-bold mb-6 ">Let’s get In Touch</h3>
@@ -44,10 +43,9 @@ const GetInTouch = () => {
           </div>
 
           {/* Right Side Gradient */}
-          <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
-            <img src={Frame} alt="" />
+          <div className="">
+            <img src={Frame} alt="" className="hidden md:block absolute right-0 top-0 bottom-0 w-1/2 " />
           </div>
-         
         </div>
       </div>
     </section>

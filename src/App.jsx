@@ -8,6 +8,7 @@ import OtherProject from './component/OtherProject'
 import ContactSection from './component/ContactSection'
 import Faq from './component/Faq'
 // import Testimonial from './component/Testimonial'
+import MobileGetInTouch from './component/MobileGetInTouch'
 import GetInTouch from './component/GetInTouch'
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         </section>
         <section>
         <GetInTouch/>
+        </section>
+        <section>
+        <MobileGetInTouch/>
         </section>
         
         
