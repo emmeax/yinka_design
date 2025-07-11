@@ -2,6 +2,7 @@ import React from "react";
 import { PhoneCall } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import Frame from '../assets/Image/Frame 2087326832.png'
+import Vector from '../assets/Image/Vector.png'
 
 const GetInTouch = () => {
   return (
@@ -31,14 +32,12 @@ const GetInTouch = () => {
               </a>
 
               {/* LinkedIn Button */}
-              <a
-                href="https://www.linkedin.com/in/yourusername" // Replace with your LinkedIn
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-white px-4 py-2 rounded-md font-neue font-medium flex items-center gap-2 hover:bg-white hover:text-[#5D0ECC] transition"
-              >
-                Connect with me <FaLinkedin size={16} />
-              </a>
+<a
+              href="#"
+              className="border border-white text-xl text-white px-8 py-3 rounded-full font-neue font-medium flex items-center justify-center gap-2 hover:bg-white hover:text-[#5D0ECC] transition"
+            >
+              Connect with me <img src={Vector} className="bg-blue-500  " />
+            </a>
             </div>
           </div>
 
