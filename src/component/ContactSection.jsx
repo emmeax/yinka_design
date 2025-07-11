@@ -16,8 +16,10 @@ const images = [
   "https://res.cloudinary.com/ddjnrebkn/image/upload/v1751436011/all%20folder/77ec9cd8e90e04ba720835f111b50fd7cfa982b4_nkcude.jpg",
   "https://res.cloudinary.com/ddjnrebkn/image/upload/v1751436010/all%20folder/3e9c1b9d49afb51e9fbc8abed088c2d20d79e26f_fy62dz.jpg",
   "https://res.cloudinary.com/ddjnrebkn/image/upload/v1751436009/all%20folder/f25fa021ccc563685f354af60aba54d8366952d4_cg9rkv.jpg",
+  "https://res.cloudinary.com/ddjnrebkn/image/upload/v1752137356/all%20folder/7042a84b3d6a7edb0157de0a7bf383dd2673a1be_1_jixrit.jpg",
   "https://res.cloudinary.com/ddjnrebkn/image/upload/v1752137356/all%20folder/97cd22c816db3d23a1a6db0cfb1b31a6f4274da0_1_hjdqyc.jpg",
   "https://res.cloudinary.com/ddjnrebkn/image/upload/v1752137356/all%20folder/32603aa2bb5a605bdf4f394aa9dbfdb440bdd68e_1_d8peed.jpg",
+  
 ];
 const image=[
   "https://res.cloudinary.com/ddjnrebkn/image/upload/v1751436011/all%20folder/d4966f9d72ca556b55a0a5029649db152cdbd55a_2_zspzfb.jpg",
@@ -245,7 +247,7 @@ const ContactSection = () => {
 
 {/* Written Testimonials */}
 <div className="md:grid md:grid-cols-3 md:px-20 px-10 gap-8 overflow-x-auto flex snap-x">
-  {images.slice(2, 5).map((img, i) => (
+  {images.slice(10, 13).map((img, i) => (
     <div
       key={i}
       className="min-w-[300px] bg-black/30 p-4 rounded-xl border border-white/10 shadow-md snap-start hover:scale-[1.02] hover:shadow-lg transition-transform duration-300 ease-in-out"
