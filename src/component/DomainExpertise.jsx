@@ -143,7 +143,7 @@ const DomainExpertise = () => {
         </p>
 
         {/* Desktop Section */}
-        <div className="md:grid md:grid-cols-3 gap-6 hidden md:grid">
+        <div className="md:grid md:grid-cols-3 text-left gap-6 hidden md:grid">
           {expertiseData.map((item, index) => (
             <div
               key={index}
