@@ -147,17 +147,18 @@ const DomainExpertise = () => {
           {expertiseData.map((item, index) => (
             <div
               key={index}
-              className={`min-w-[250px] md:min-w-0 rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform
-                hover:scale-[1.03] hover:shadow-lg hover:border hover:border-purple-600
+              className={`group min-w-[250px] md:min-w-0 rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform
+                hover:scale-[1.05] hover:-translate-y-1 hover:ring-2 hover:ring-purple-500 hover:shadow-xl hover:backdrop-blur-sm
+                hover:bg-gradient-to-br hover:from-purple-900 hover:to-black
                 ${index === 0
                   ? 'bg-gradient-to-r from-purple-800 to-black'
                   : 'bg-[#1a1a1a]'
                 }`}
             >
-              <h3 className="text-purple-400 text-xl font-semibold mb-3 leading-snug">
+              <h3 className="text-purple-400 text-xl font-semibold mb-3 leading-snug group-hover:text-white transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-gray-300 text-base whitespace-pre-line break-words leading-relaxed">
+              <p className="text-gray-300 text-base whitespace-pre-line break-words leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                 {item.description}
               </p>
             </div>
@@ -169,17 +170,18 @@ const DomainExpertise = () => {
           {mobileExpertiseData.map((item, index) => (
             <div
               key={index}
-              className={`min-w-[250px] rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform
-                hover:scale-[1.03] hover:shadow-lg hover:border hover:border-purple-600
+              className={`group min-w-[250px] rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform
+                hover:scale-[1.05] hover:-translate-y-1 hover:ring-2 hover:ring-purple-500 hover:shadow-xl hover:backdrop-blur-sm
+                hover:bg-gradient-to-br hover:from-purple-900 hover:to-black
                 ${index === 0
                   ? 'bg-gradient-to-r from-purple-800 to-black'
                   : 'bg-[#1a1a1a]'
                 }`}
             >
-              <h3 className="text-purple-400 text-xl font-semibold mb-3 leading-snug">
+              <h3 className="text-purple-400 text-xl font-semibold mb-3 leading-snug group-hover:text-white transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-gray-300 text-base whitespace-pre-line break-words leading-relaxed">
+              <p className="text-gray-300 text-base whitespace-pre-line break-words leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                 {item.description}
               </p>
             </div>
