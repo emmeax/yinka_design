@@ -1,88 +1,103 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState } from "react";
+import { cn } from "../../lib/utils";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { label: 'About', id: 'about' },
-    { label: 'Work', id: 'work' },
-    { label: 'Contact', id: 'contact' },
-  ];
+    const navLinks = [
+        { label: "About", id: "about" },
+        { label: "Work", id: "work" },
+        { label: "Contact", id: "contact" },
+    ];
 
-  const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false); // close menu on click
-    }
-  };
+    const handleScroll = (id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+            setIsOpen(false); // close menu on click
+        }
+    };
 
-  return (
-    <nav className="bg-black font-neue font-regular  text-white p-4 relative z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Left: Name (Desktop Only) */}
-        <div className="text-2xl hidden md:block font-medium">
-          Olayinka D. Adeyefa
-        </div>
+    return (
+        <nav className="w-contain font-neue py-4 relative">
+            <div className="flex md:items-start items-center justify-between text-3xl">
+                {/* Left: Name (Desktop Only) */}
+                <h2>Olayinka D. Adeyefa</h2>
 
-        {/* Center (Desktop Only) */}
-        <div className="hidden md:flex flex-1 justify-center items-center gap-16">
-          <div className="text-left leading-tight text-lg">
-            <p>Head of Operations at</p>
-            <p>Axel Cyber & Veoc Tech</p>
-          </div>
-          <div className="text-left text-lg">
-            <p>Probably:</p>
-            <p className="text-purple-500">At the Gym</p>
-          </div>
-        </div>
+                {/* Right Section */}
+                <div className="md:flex hidden items-start gap-[10rem]">
+                    <p className="text-left">
+                        <span>Probably:</span>
+                        <br />
+                        <span className="text-primary">At the Gym</span>
+                    </p>
+                    {/* Desktop Nav Links */}
+                    <div className="flex items-center gap-3">
+                        {navLinks.map((link, idx) => (
+                            <span
+                                key={idx}
+                                onClick={() => handleScroll(link.id)}
+                                className="cursor-pointer hover:text-primary transition"
+                            >
+                                {link.label}
+                                {idx !== navLinks.length - 1 && ","}
+                            </span>
+                        ))}
+                    </div>
+                </div>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-4 ml-auto">
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex space-x-4 text-lg">
-            {navLinks.map((link, idx) => (
-              <span
-                key={idx}
-                onClick={() => handleScroll(link.id)}
-                className={`cursor-pointer hover:text-purple-400 transition ${
-                  link.label === 'Work' ? 'text-purple-500' : ''
-                }`}
-              >
-                {link.label}
-                {idx !== navLinks.length - 1 && ','}
-              </span>
-            ))}
-          </div>
-
-          {/* Mobile Toggle Button (Right aligned) */}
-          <div className="md:hidden mb-5">
-            <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Nav Menu */}
-      {isOpen && (
-        <div className="absolute right-4 top-10 text-left bg-black border border-gray-700 rounded-md shadow-md p-4 space-y-2 text-sm z-50">
-          {navLinks.map((link, idx) => (
-            <div
-              key={idx}
-              onClick={() => handleScroll(link.id)}
-              className={`cursor-pointer ${
-                link.label === 'Work' ? 'text-purple-500' : ''
-              }`}
-            >
-              {link.label}
+                {/* Mobile Toggle Button (Right aligned) */}
+                <button
+                    type="button"
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen ? "true" : "false"}
+                    className="md:hidden inline-flex items-center justify-center size-10"
+                    onClick={() => setIsOpen((prev) => !prev)}
+                >
+                    <div className="flex items-center *:transition-all *:duration-300 [--bar-width:1.5rem]">
+                        {/* Top bar */}
+                        <div
+                            className={cn(
+                                "h-0.5 bg-white w-[var(--bar-width)] translate-x-full",
+                                { "-translate-y-2": !isOpen },
+                            )}
+                        />
+                        {/* Middle bar */}
+                        <div
+                            className={cn(
+                                "h-0.5 bg-white w-[var(--bar-width)]",
+                            )}
+                        />
+                        {/* Bottom bar */}
+                        <div
+                            className={cn(
+                                "h-0.5 bg-white w-[var(--bar-width)] -translate-x-full",
+                                { "translate-y-2": !isOpen },
+                            )}
+                        />
+                    </div>
+                </button>
             </div>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
+
+            {/* Mobile Nav Menu */}
+            <div
+                className={cn(
+                    "md:hidden absolute inset-x-0 translate-y-4 z-50 bg-black transition-all duration-300",
+                    isOpen
+                        ? "[clip-path:inset(0_0_0_0)] max-h-dvh py-6"
+                        : "[clip-path:inset(0_0_100%_0)] max-h-0 py-0",
+                )}
+            >
+                <ul className="flex flex-col items-center gap-4">
+                    {navLinks.map((link, idx) => (
+                        <span key={idx} onClick={() => handleScroll(link.id)}>
+                            {link.label}
+                        </span>
+                    ))}
+                </ul>
+            </div>
+        </nav>
+    );
 };
 
 export default Navbar;

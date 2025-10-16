@@ -1,50 +1,59 @@
-import React from 'react';
-import Profilepics from '../assets/Image/Profilepics.png';
-
-
+import Profilepics from "../assets/Image/Profilepics.png";
+import Document from "./icons/document";
+import LinkedIn from "./icons/linkedin";
 
 const Home = () => {
-  return (
-    <section className="section-spacing relative  py-14 text-white mb-9 grid md:grid-cols-2 gap-8 overflow-hidden ">
-     
+    return (
+        <section className="w-contain relative py-20 text-white mb-9 flex lg:flex-row flex-col lg:items-start justify-center gap-[3.75rem]">
+            <div className="lg:w-[55%] space-y-4 font-medium">
+                <h2 className="lg:text-8xl text-5xl inline-flex flex-col gap-2 leading-[60px]">
+                    <span className="lg:inline hidden">
+                        CREATIVE DIRECTOR & DESIGNER
+                    </span>
+                    <span className="inline lg:hidden">DIGITAL DESIGNER</span>
+                    <span className="lg:text-5xl text-3xl">
+                        with 7+ years of experience
+                    </span>
+                </h2>
+                <p className="lg:text-2xl text-xl inline-flex flex-col gap-4">
+                    <span>
+                        I specialize in taking Ideas and Visions from obscurity
+                        to execution with Problem solving skills, Technology and
+                        Service Delivery Systems applied with out of the box
+                        thinking.
+                    </span>
+                    <span>
+                        My experience in Writing, Design, Marketing, Sales and
+                        Management, allowing me lead cross-functional teams to
+                        achieving success and create High Conversion Designs
+                        that Resonate with Target Audiences.
+                    </span>
+                </p>
+            </div>
 
-      {/* Left Text Section */}
-      <div className="relative z-10 ml-0 md:ml-24 text-left">
-        <h1 className="text-4xl md:text-6xl font-technor font-medium leading-tight">
-          <span className="md:block hidden">CREATIVE</span>
-          <span className="md:block hidden">DIRECTOR & PM</span>
-          <span className="md:hidden block">DIGITAL DESIGNER</span>
-        </h1>
-
-        <p className="mt-4 text-2xl font-technor font-medium md:block hidden">
-          with 7+ years of experience
-        </p>
-        <p className="mt-4 text-2xl font-technor font-medium block md:hidden">
-          4+ years of experience
-        </p>
-
-        <p className="mt-6 max-w-xl font-neue font-medium md:block hidden text-lg">
-          I specialize in taking Ideas and Visions from obscurity to execution with problem solving skills, Technology and Systems applied with out of the box thinking.
-        </p>
-        <p className="mt-6 max-w-xl font-neue font-medium md:hidden ">
-          I deliver high quality design services across multiple fields, helping both individuals and brands bring their ideas to life.
-        </p>
-
-        <p className="mt-4 md:block hidden max-w-xl text-lg">
-          My experience in Writing, Design, Marketing, Sales and Management allows me to lead cross-functional teams to achieving success.
-        </p>
-      </div>
-
-      {/* Right Image Section */}
-      <div className="relative z-10 flex justify-center items-center md:ml-40 ">
-        <img
-          src={Profilepics}
-          alt="Olayinka"
-          className="rounded-lg md:w-56 w-80 h-auto object-cover md:mb-14"
-        />
-      </div>
-    </section>
-  );
+            <div className="flex flex-col gap-6">
+                <img
+                    src={Profilepics}
+                    alt=""
+                    className="size-full object-cover"
+                />
+                <div className="flex items-center gap-2 *:w-full">
+                    <a
+                        href=""
+                        className="flex items-center gap-2 h-12 px-2.5 bg-primary rounded-2xl font-medium"
+                    >
+                        Download CV <Document className="size-4" />
+                    </a>
+                    <a
+                        href=""
+                        className="flex items-center gap-2 h-12 px-2.5 border border-primary rounded-2xl font-medium"
+                    >
+                        Let's connect <LinkedIn className="size-4" />
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Home;
