@@ -4,9 +4,9 @@ import LinkedIn from "./icons/linkedin";
 
 const Home = () => {
     return (
-        <section className="w-contain relative py-20 text-white mb-9 flex lg:flex-row flex-col lg:items-start justify-center gap-[3.75rem]">
+        <section className="w-contain relative pt-20 pb-[10rem] text-white flex lg:flex-row flex-col lg:items-start justify-center gap-[3.75rem] z-10">
             <div className="lg:w-[55%] space-y-4 font-medium">
-                <h2 className="lg:text-8xl text-5xl inline-flex flex-col gap-2 leading-[60px]">
+                <h2 className="lg:text-8xl text-5xl inline-flex flex-col gap-2 font-technor leading-[60px]">
                     <span className="lg:inline hidden">
                         CREATIVE DIRECTOR & DESIGNER
                     </span>
@@ -31,7 +31,7 @@ const Home = () => {
                 </p>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="lg:w-[25%] flex flex-col gap-6">
                 <img
                     src={Profilepics}
                     alt=""
@@ -40,13 +40,13 @@ const Home = () => {
                 <div className="flex items-center gap-2 *:w-full">
                     <a
                         href=""
-                        className="flex items-center gap-2 h-12 px-2.5 bg-primary rounded-2xl font-medium"
+                        className="flex items-center justify-center gap-2 h-12 px-2.5 bg-primary rounded-2xl font-medium"
                     >
                         Download CV <Document className="size-4" />
                     </a>
                     <a
                         href=""
-                        className="flex items-center gap-2 h-12 px-2.5 border border-primary rounded-2xl font-medium"
+                        className="flex items-center justify-center gap-2 h-12 px-2.5 border border-primary rounded-2xl font-medium"
                     >
                         Let's connect <LinkedIn className="size-4" />
                     </a>
