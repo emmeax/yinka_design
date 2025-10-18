@@ -34,12 +34,17 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
                 onClick={onClick}
             >
                 <h3 className="text-xl font-syne font-semibold">{question}</h3>
-                <div className="shrink-0 size-[30px] grid place-content-center rounded-full bg-[#F8F9FF] text-primary">
-                    {isOpen ? (
-                        <Minus className="size-[16.25px]" />
-                    ) : (
-                        <Plus className="size-[16.25px]" />
-                    )}
+                <div className="shrink-0 size-[30px] relative flex justify-center items-center rounded-full bg-[#F8F9FF] text-primary">
+                    <Minus
+                        className={cn("opacity-0 invisible size-[16.25px] absolute transition-all duration-300 ease-in-out", {
+                            "opacity-100 visible": isOpen,
+                        })}
+                    />
+                    <Plus
+                        className={cn("opacity-0 invisible size-[16.25px] absolute transition-all duration-300 ease-in-out", {
+                            "opacity-100 visible": !isOpen,
+                        })}
+                    />
                 </div>
             </div>
             <div
@@ -59,7 +64,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
 };
 
 const Faq = () => {
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState(0);
 
     const handleClick = (index) => {
         setOpenIndex(openIndex === index ? null : index);
