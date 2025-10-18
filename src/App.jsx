@@ -3,17 +3,17 @@ import "./App.css";
 import About from "./component/About";
 import ContactSection from "./component/ContactSection";
 import Faq from "./component/Faq";
+import GetInTouch from "./component/GetInTouch";
 import Hero from "./component/Hero";
 import Home from "./component/Home";
+import MobileGetInTouch from "./component/MobileGetInTouch";
 import Navbar from "./component/Navbar";
 import OtherProject from "./component/OtherProject";
-// import Testimonial from './component/Testimonial'
-import GetInTouch from "./component/GetInTouch";
-import MobileGetInTouch from "./component/MobileGetInTouch";
+import Testimonial from "./component/Testimonial";
 
 function App() {
     return (
-        <div className=" bg-[#000000] text-white">
+        <div>
             <Navbar />
             <Home />
             <Hero />
@@ -26,9 +26,9 @@ function App() {
             <section id="contact">
                 <ContactSection />
             </section>
-            {/* <section>
-        <Testimonial/>
-        </section> */}
+            <section id="testimonial">
+                <Testimonial />
+            </section>
             <section>
                 <Faq />
             </section>

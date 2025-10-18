@@ -1,184 +1,144 @@
-import React, { useState, useEffect } from 'react';
-import Arrow from '../assets/Image/Arrow.png';
-import Formeswork from '../assets/Image/Formeswork.png';
-import Cube from '../assets/Image/Cube.png';
+import { useState } from "react";
+import Cube from "../assets/Image/box.svg";
+import CirclesOverlap from "../assets/Image/circles-overlap.svg";
+import { cn } from "../lib/utils";
+import DiscussProject from "./DiscussProject";
+import SectionHeading from "./SectionHeading";
 
 const Hero = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isMobile, setIsMobile] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null); // hover effect
+    const [selectedCategory, setSelectedCategory] = useState("All");
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    const categories = [
+        "All",
+        "UI/UX Design",
+        "Website Design",
+        "Brand Design",
+        "Pitch & Presentations",
+        "Marketing",
+    ];
 
-  const categories = [
-    'All',
-    'UI/UX Design',
-    'Website Design',
-    'Brand Design',
-    'Pitch & Presentations',
-    'Marketing',
-  ];
+    const allProjects = [
+        {
+            id: 1,
+            category: "UI/UX Design",
+            desktopImage:
+                "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444044/all%20folder/Home_page_0_1_w2w6de.png",
 
-  const allProjects = [
-    {
-      id: 1,
-      category: 'UI/UX Design',
-      desktopImage:
-        'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444044/all%20folder/Home_page_0_1_w2w6de.png',
-        
-      tags: ['Web Design', 'Finance'],
-    },
-    {
-      id: 2,
-      category: 'Website Design',
-      desktopImage:
-        'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444045/all%20folder/PromptGuardianlandingpage_mvklp8.png',
-      tags: ['Web Design', 'Saas'],
-    },
-    {
-      id: 3,
-      category: 'Brand Design',
-      desktopImage:
-        'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444044/all%20folder/Home_page_0_1_w2w6de.png',
-      tags: ['Brand Design', 'Brand Design'],
-    },
-    {
-      id: 4,
-      category: 'Pitch & Presentations',
-      desktopImage:
-        'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444045/all%20folder/PromptGuardianlandingpage_mvklp8.png',
-      tags: ['Pitch & Presentations', 'Brand Design'],
-    },
-    {
-      id: 5,
-      category: 'Marketing',
-      desktopImage:
-        'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444044/all%20folder/Home_page_0_1_w2w6de.png',
-      tags: ['Marketing', 'Marketing'],
-    },
-    {
-      id: 6,
-      category: 'Marketing',
-      desktopImage:
-        'https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444045/all%20folder/PromptGuardianlandingpage_mvklp8.png',
-      tags: ['Web Design', 'Marketing'],
-    },
-  ];
+            tags: ["Web Design", "Finance"],
+        },
+        {
+            id: 2,
+            category: "Website Design",
+            desktopImage:
+                "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444045/all%20folder/PromptGuardianlandingpage_mvklp8.png",
+            tags: ["Web Design", "Saas"],
+        },
+        {
+            id: 3,
+            category: "Brand Design",
+            desktopImage:
+                "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444044/all%20folder/Home_page_0_1_w2w6de.png",
+            tags: ["Brand Design", "Brand Design"],
+        },
+        {
+            id: 4,
+            category: "Pitch & Presentations",
+            desktopImage:
+                "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444045/all%20folder/PromptGuardianlandingpage_mvklp8.png",
+            tags: ["Pitch & Presentations", "Brand Design"],
+        },
+        {
+            id: 5,
+            category: "Marketing",
+            desktopImage:
+                "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444044/all%20folder/Home_page_0_1_w2w6de.png",
+            tags: ["Marketing", "Marketing"],
+        },
+        {
+            id: 6,
+            category: "Marketing",
+            desktopImage:
+                "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746444045/all%20folder/PromptGuardianlandingpage_mvklp8.png",
+            tags: ["Web Design", "Marketing"],
+        },
+    ];
 
-  const filteredProjects =
-    selectedCategory === 'All'
-      ? allProjects
-      : allProjects.filter((project) => project.category === selectedCategory);
+    const filteredProjects =
+        selectedCategory === "All"
+            ? allProjects
+            : allProjects.filter(
+                  (project) => project.category === selectedCategory,
+              );
 
-  return (
-    <div className="text-white w-full overflow-hidden md:py-20 py-10">
-      <img src={Formeswork} alt="" className="absolute hidden md:block top-3/4 w-72 mt-52 z-0" />
-      <img src={Cube} alt="" className="absolute hidden md:block -bottom-3/4 right-80 w-32" />
+    return (
+        <section className="relative isolate">
+            <img
+                src={CirclesOverlap}
+                alt=""
+                className="absolute hidden lg:block top-0 -translate-y-[80%] -z-10"
+            />
+            <img
+                src={Cube}
+                alt=""
+                className="absolute hidden lg:block bottom-0 translate-y-[30%] right-0 -z-10"
+            />
 
-      <h2 className="text-3xl md:text-6xl font-technor font-bold text-left mb-10">
-        <span className="text-purple-500">01/</span> COMPETENCIES & PROJECTS
-      </h2>
+            <div className="w-contain flex flex-col gap-10">
+                <SectionHeading index="01/" heading="SKILLSETS & PROJECTS" />
 
-      {/* Category Buttons */}
-      <div className="relative z-10">
-  <div className="flex md:gap-9 gap-4 overflow-x-auto scrollbar-hide mb-14 pb-2">
-    {categories.map((category, index) => (
-      <button
-        key={index}
-        onClick={() => setSelectedCategory(category)}
-        className={`md:px-8 px-6 py-2 ${
-          category === 'All' ? 'rounded-2xl' : 'rounded-xl'
-        } text-nowrap text-lg font-medium border transition-all duration-300 ${
-          selectedCategory === category
-            ? 'bg-white text-purple-600 border-purple-500'
-            : 'border-purple-500 text-white hover:bg-purple-600 hover:text-white'
-        }`}
-      >
-        {category}
-      </button>
-    ))}
-  </div>
-  </div>
+                <div className="flex flex-col lg:gap-[6.25rem] gap-10">
+                    <div className="flex items-center justify-between gap-7 overflow-auto scrollbar-hide">
+                        {categories.map((category, index) => (
+                            <button
+                                key={category + index}
+                                className={cn(
+                                    "flex items-center justify-center lg:h-[4.5rem] h-[62px] rounded-[30px] px-9 py-5 lg:text-2xl text-base hover:bg-white hover:text-black border border-primary hover:border-transparent whitespace-nowrap transition duration-300",
+                                    {
+                                        "bg-white text-black border-transparent":
+                                            selectedCategory === category,
+                                    },
+                                )}
+                                onClick={() => setSelectedCategory(category)}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
 
-      {/* Horizontal Project Carousel */}
-      <div className="flex gap-6 overflow-x-auto px-4 md:px-10 scrollbar-hide snap-x snap-mandatory">
-        {(() => {
-          const groups = [];
-          const step = isMobile ? 1 : 2;
-          for (let i = 0; i < filteredProjects.length; i += step) {
-            groups.push(filteredProjects.slice(i, i + step));
-          }
-
-          return groups.map((group, groupIndex) => (
-            <div
-              key={groupIndex}
-              className={`snap-start flex-shrink-0 ${
-                isMobile ? 'w-[95vw]' : 'w-[95vw] flex flex-row gap-4'
-              } h-auto`}
-            >
-              {group.map((project, index) => (
-                <div
-                  key={project.id}
-                  onMouseEnter={() => setActiveIndex(project.id)}
-                  onMouseLeave={() => setActiveIndex(null)}
-                  className={`transition-all duration-300 ease-in-out cursor-pointer ${
-                    activeIndex === null
-                      ? 'scale-100'
-                      : activeIndex === project.id
-                      ? 'scale-105 z-10'
-                      : 'scale-95 opacity-50'
-                  } flex-1`}
-                >
-                  <img
-                    src={project.desktopImage}
-                    alt={project.category}
-                    className="w-full max-h-[85vh] object-cover rounded-xl ml-10"
-                  />
-                  <div className="flex gap-2 flex-wrap mt-2 font-neue font-regular">
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="text-xs px-4 py-3 rounded-xl ml-10 border border-white text-white"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                    <div className="flex items-center gap-7 overflow-auto snap-x scrollbar-hide">
+                        {filteredProjects.map(
+                            ({ category, desktopImage, tags }, index) => (
+                                <div
+                                    key={category + index}
+                                    className="lg:min-w-[618.5px] min-w-[90%] flex flex-col gap-6 snap-start"
+                                >
+                                    <div className="overflow-hidden group lg:h-[350px] h-[194px]">
+                                        <img
+                                            src={desktopImage}
+                                            alt=""
+                                            className="size-full object-cover group-hover:scale-105 transition-transform duration-[600ms]"
+                                        />
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        {tags.map((tag, index) => (
+                                            <span
+                                                key={tag + index}
+                                                className="border border-white rounded-lg px-2.5 py-1"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ),
+                        )}
+                    </div>
                 </div>
-              ))}
-            </div>
-          ));
-        })()}
-      </div>
 
-      {/* CTA */}
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-4 px-4 md:px-20 mt-16">
-        <img src={Arrow} alt="Arrow" className="h-14 md:h-20 md:ml-4" />
-        <div className="md:text-2xl font-technor font-regular text-left">
-          <button
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            <span className="text-purple-400 text-3xl md:ml-20">(&lt; CLICK HERE)</span>
-          </button>
-          <span className="tracking-widest text-3xl ml-7">
-            IF YOU'D LIKE TO DISCUSS A PROJECT
-          </span>
-        </div>
-      </div>
-    </div>
-  );
+                <DiscussProject />
+            </div>
+        </section>
+    );
 };
 
 export default Hero;

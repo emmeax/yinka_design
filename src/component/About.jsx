@@ -1,88 +1,88 @@
-import React from 'react';
-import Arrow from '../assets/Image/Arrow.png';
-import BgCurve from '../assets/Image/div.png';        // Arch shape
-import BgDiagonal from '../assets/Image/div1.png';     // Diagonal line
-import aboutshape from '../assets/Image/aboutshape.png'
-import DomainExpertise from './DomainExpertise';
-import Skills from './Skills';
+import React from "react";
+import aboutshape from "../assets/Image/aboutshape.png";
+import BgCurve from "../assets/Image/div.png"; // Arch shape
+import BgDiagonal from "../assets/Image/div1.png"; // Diagonal line
+import { skills } from "../lib/data";
+import DiscussProject from "./DiscussProject";
+import DomainExpertise from "./DomainExpertise";
+import SectionHeading from "./SectionHeading";
+import Skills from "./Skills";
 
 const About = () => {
-  return (
-    <div className="relative bg-black text-white w-full  overflow-hidden">
-      {/* Background Elements */}
-      <img
-        src={BgCurve}
-        alt="Background Curve Left"
-        className="absolute mt-48 top-80 hidden  md:block left-2 z-0 w-52 md:block hidden pointer-events-none"
-      />
-      <img
-        src={BgDiagonal}
-        alt="Background Diagonal Right"
-        className="absolute top-96 mt-24 hidden  md:block right-0 z-0 w-52 md:block hidden pointer-events-none"
-      />
-      <img
-        src={aboutshape}
-        alt="Background Center (mirrored or duplicated)"
-        className="absolute top-28 left-44 hidden  md:block transform -translate-x-1/2 z-0 w-48 md:block hidden pointer-events-none"
-      />
+    return (
+        <section className="pt-[10rem] pb-[5rem] space-y-[10rem] relative isolate">
+            <div className="w-contain flex flex-col gap-10">
+                <img
+                    src={BgDiagonal}
+                    alt="Background Diagonal Right"
+                    className="lg:block hidden -z-10 absolute right-0 top-[30%]"
+                />
 
-      {/* Content */}
-      <section className="relative z-10">
-        <h2 className="md:text-5xl text-4xl font-technor font-medium text-left mb-6">
-          <span className="text-[#A22CFF] font-neue font-regular">02/</span>{' '}
-          <span className="text-white">ABOUT ME</span>
-        </h2>
+                <SectionHeading index="02/" heading="ABOUT ME" />
 
-        <h3 className="font-bold text-white text-3xl text-xl font-technor mb-5 md:ml-36 text-left">
-          Olayinka D. Adeyefa
-        </h3>
-        <p className="text-lg text-slate-300 leading-relaxed text-left mb-12 font-neue font-medium max-w-3xl md:ml-36">
-          Asides having worked on various projects ranging from Websites to Brand Identity projects to Pitch Decks and more, 
-          My Design versatility are not the extent of my abilities. <br />
-          I have experience as a Creative director and Project/Product Manager delivering over a dozen projects successfully in the last year alone, 
-          which means I can comfortably work with Multiple other Developers and other members of a Project Delivery team/Sprint.
-        </p>
-      </section>
+                <div className="lg:px-[10%] space-y-10 mx-auto lg:text-2xl text-xl relative">
+                    <h3 className="text-3xl font-semibold font-technor">
+                        Olayinka D. Adeyefa
+                    </h3>
 
-      <section className="relative z-10 font-neue font-regular max-w-3xl md:ml-36 text-left">
-        <p className="text-2xl mt-7">
-          I can comfortably contribute to projects with my knowledge and provable experience in the following fields:
-        </p>
-        <ul className="list-disc space-y-2 ml-10 text-2xl">
-          <li>UI/UX DESIGN</li>
-          <li>GRAPHICS DESIGN</li>
-          <li>BRAND DESIGN</li>
-          <li>WRITING</li>
-          <li>MARKETING</li>
-        </ul>
-        <p className="text-2xl mt-2">and CYBER SECURITY</p>
-        <p className="text-lg mt-4">
-          My uncanny ability to bring creative thinking and excellent execution to project might just be available for your project (NO GUARANTEE’S though),
-        </p>
-      </section>
+                    <p>
+                        Asides having worked on various projects ranging from
+                        Websites to Brand Identity
+                        <br className="lg-br" /> projects to Pitch Decks and
+                        more, My Design versatility are not the extent of my
+                        <br className="lg-br" /> abilities.
+                        <br /> I have experience as a Creative director and
+                        Project/Product Manager delivery
+                        <br className="lg-br" /> over a dozen projects
+                        successfully in the last year alone, which means I can
+                        <br className="lg-br" />
+                        comfortably work with Multiple other Developers and
+                        other members of a Project
+                        <br className="lg-br" /> Delivery team/Sprint,
+                    </p>
 
-      <DomainExpertise />
-      <Skills />
+                    <div className="lg:text-[2.5rem] text-3xl leading-[1.2]">
+                        <p>
+                            I can comfortably contribute to projects with my
+                            knowledge and provable experience in the following
+                            fields
+                        </p>
+                        <ul className="list-disc pl-12">
+                            {skills.map((skill, index) => (
+                                <li key={index}>{skill}</li>
+                            ))}
+                        </ul>
+                    </div>
 
-      {/* CTA */}
-       <div className="flex flex-col md:flex-row items-start md:items-center gap-4  mb-14">
-              <img src={Arrow} alt="Arrow" className="h-14  md:h-20 md:ml-4" />
-              <div className=" md:text-2xl font-technor font-regular text-left">
-                <button
-                  onClick={() => {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  <span className="text-purple-400 text-3xl md:ml-20">(&lt; CLICK HERE)</span>
-                </button>
-                <span className="tracking-widest text-3xl ml-7">TO GET IN TOUCH </span>
-              </div>
+                    <p>
+                        My uncanny ability to bring creative thinking and
+                        excellent execution to project
+                        <br className="lg-br" /> might just be available for
+                        your project (NO GUARANTEE's though).
+                    </p>
+
+                    <img
+                        src={BgCurve}
+                        alt="Background Curve Left"
+                        className="lg:block hidden -z-10 absolute bottom-[-130px] left-0"
+                    />
+                    <img
+                        src={aboutshape}
+                        alt="Background Center (mirrored or duplicated)"
+                        className="lg:block hidden -z-10 absolute top-10 left-10"
+                    />
+                </div>
             </div>
-    </div>
-  );
+
+            <div className="w-contain space-y-[6rem]">
+                <DomainExpertise />
+
+                <Skills />
+
+                <DiscussProject />
+            </div>
+        </section>
+    );
 };
 
 export default About;
