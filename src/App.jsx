@@ -6,7 +6,6 @@ import Faq from "./component/Faq";
 import GetInTouch from "./component/GetInTouch";
 import Hero from "./component/Hero";
 import Home from "./component/Home";
-import MobileGetInTouch from "./component/MobileGetInTouch";
 import Navbar from "./component/Navbar";
 import OtherProject from "./component/OtherProject";
 import Testimonial from "./component/Testimonial";
@@ -34,9 +33,6 @@ function App() {
             </section>
             <section>
                 <GetInTouch />
-            </section>
-            <section>
-                <MobileGetInTouch />
             </section>
         </div>
     );
