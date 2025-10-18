@@ -1,77 +1,87 @@
-import React, { useState } from "react";
 import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
+import { cn } from "../lib/utils";
+import SectionHeading from "./SectionHeading";
 
 const faqs = [
-  {
-    question: "Can you walk us through your design process",
-    answer:
-      "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
-  },
-  {
-    question: "How much do you charge?",
-    answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
-  },
-  {
-    question: "What is the standard delivery timeline",
-    answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
-  },
-  {
-    question: "Can you walk us through your design process",
-    answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
-  },
-  {
-    question: "Can you walk us through your design process",
-    answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
-  },
+    {
+        question: "Can you walk us through your design process",
+        answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
+    },
+    {
+        question: "How much do you charge?",
+        answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
+    },
+    {
+        question: "What is the standard delivery timeline",
+        answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
+    },
+    {
+        question: "Can you walk us through your design process",
+        answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
+    },
+    {
+        question: "Can you walk us through your design process",
+        answer: "Gbadebo Adeokoya is a Product designer based in Nigeria focused on creating visuals and good digital experience leveraging on FinTech and Ed-Tech",
+    },
 ];
 
-const FaqSection = () => {
-  const [openIndex, setOpenIndex] = useState(0); // Open first item by default
-
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  return (
-    <section className=" bg-black text-white  ">
-      <h2 className="text-2xl md:text-5xl font-technor font-medium mb-10 mr-10 text-left">
-        <span className="text-purple-500">06/</span> FAQ’s
-      </h2>
-
-      <div className="space-y-6 md:px-20 ">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className={`rounded-xl px-6 py-4 transition-all duration-300 ${
-              openIndex === index
-                ? "bg-gradient-to-r from-purple-800 to-purple-600"
-                : "bg-gradient-to-r from-purple-900 to-purple-700"
-            }`}
-          >
+const AccordionItem = ({ question, answer, isOpen, onClick }) => {
+    return (
+        <div className="rounded-2xl p-5 bg-[linear-gradient(122.27deg,_#310E4C_75.91%,_rgba(142,_24,_234,_0.54)_98.49%)]">
             <div
-              className="flex justify-between items-center cursor-pointer"
-              onClick={() => toggle(index)}
+                className="flex justify-between items-start cursor-pointer"
+                onClick={onClick}
             >
-              <h3 className="text-lg font-syne font-semibold text-left md:text-xl font-semibold">
-                {faq.question}
-              </h3>
-             {openIndex === index ? (
-  <Minus className="w-6 h-6 rounded-full bg-white text-[#A22CFF] p-1 border border-white" />
-) : (
-  <Plus className="w-6 h-6 rounded-full bg-white text-[#A22CFF] p-1 border border-white" />
-)}
+                <h3 className="text-xl font-syne font-semibold">{question}</h3>
+                <div className="shrink-0 size-[30px] grid place-content-center rounded-full bg-[#F8F9FF] text-primary">
+                    {isOpen ? (
+                        <Minus className="size-[16.25px]" />
+                    ) : (
+                        <Plus className="size-[16.25px]" />
+                    )}
+                </div>
             </div>
-
-            {openIndex === index && faq.answer && (
-              <p className="mt-4  text-sm font-neue font-regular text-white leading-relaxed text-left">
-                {faq.answer}
-              </p>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+            <div
+                className={cn(
+                    "grid overflow-hidden transition-all duration-300 ease-in-out",
+                    isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0",
+                )}
+            >
+                <div className="overflow-hidden">
+                    <p className="mt-4">{answer}</p>
+                </div>
+            </div>
+        </div>
+    );
 };
 
-export default FaqSection;
+const Faq = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const handleClick = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
+    return (
+        <section className="w-contain py-[5rem] space-y-[5rem]">
+            <SectionHeading index="06/" heading="FAQ's" />
+
+            <div className="space-y-4 lg:px-[10%]">
+                {faqs.map((faq, index) => (
+                    <AccordionItem
+                        key={index}
+                        question={faq.question}
+                        answer={faq.answer}
+                        isOpen={openIndex === index}
+                        onClick={() => handleClick(index)}
+                    />
+                ))}
+            </div>
+        </section>
+    );
+};
+
+export default Faq;

@@ -87,7 +87,7 @@ const Hero = () => {
                 <SectionHeading index="01/" heading="SKILLSETS & PROJECTS" />
 
                 <div className="flex flex-col lg:gap-[6.25rem] gap-10">
-                    <div className="flex items-center justify-between gap-7 overflow-auto scrollbar-hide">
+                    <div className="flex items-center justify-between lg:gap-7 gap-4 overflow-auto scrollbar-hide">
                         {categories.map((category, index) => (
                             <button
                                 key={category + index}

@@ -1,54 +1,45 @@
-import React from "react";
-import { PhoneCall } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
-import Frame from '../assets/Image/Frame 2087326832.png'
-import Vector from '../assets/Image/Vector.png'
+import GetIntouchMobileImg from "@/assets/Image/get-in-touch-mobile.svg";
+import GetIntouchImg from "@/assets/Image/get-in-touch.svg";
+import SectionHeading from "./SectionHeading";
+import LinkedIn from "./icons/linkedin";
+import Phone from "./icons/phone";
 
 const GetInTouch = () => {
-  return (
-    <section id="contact" className="w-full bg-black text-white py-16  md:block hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Heading */}
-        <div className=" flex mb-6 gap-5">
-          <h3 className="text-purple-400  font-regular text-5xl font-neue ">07/</h3>
-          <h2 className="text-3xl md:text-5xl font-medium font-technor tracking-wide uppercase">Get In Touch</h2>
-        </div>
+    return (
+        <section className="w-contain py-[5rem] space-y-[5rem]">
+            <SectionHeading index="07/" heading="GET IN TOUCH" />
 
-        {/* Card */}
-        <div className="md:bg-[#5D0ECC] bg-[#A22CFF] rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between text-left p-28 relative">
-          {/* Left Side */}
-          <div className="flex-1">
-            <h3 className="text-white text-3xl md:text-4xl font-neue font-bold mb-6 ">Let’s get In Touch</h3>
+            <div className="rounded-[40px] lg:bg-[#540D8B] bg-primary flex lg:flex-row flex-col items-center justify-between">
+                <div className="flex flex-col lg:gap-9 gap-6 lg:pl-[4rem] pl-4 lg:py-0 py-20 pr-4">
+                    <h3 className="lg:text-[4rem] text-[36px] font-bold text-center lg:text-start">
+                        Let's get In
+                        <br className="lg:hidden inline" /> Touch
+                    </h3>
+                    <div className="flex lg:flex-row flex-col lg:items-center lg:gap-2 gap-4 *:w-full *:lg:w-fit">
+                        <a
+                            href="tel:+2349099346124"
+                            className="flex items-center justify-center gap-5 h-12 px-5 text-lg bg-[#1D1D1D] text-[#F8F9FF] rounded-2xl font-medium whitespace-nowrap"
+                        >
+                            Book a discovery call <Phone className="size-4" />
+                        </a>
+                        <a
+                            href=""
+                            className="flex items-center justify-center gap-5 h-12 px-5 text-lg border border-white rounded-2xl font-medium whitespace-nowrap"
+                        >
+                            Connect with me <LinkedIn className="size-4" />
+                        </a>
+                    </div>
+                </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* Cal.com Button */}
-              <a
-                href="https://cal.com/yourname" // Replace with your actual booking link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-black text-white px-4 py-2 font-neue font-medium rounded-md flex items-center gap-2 hover:bg-gray-900 transition"
-              >
-                Book a discovery call <PhoneCall size={16} />
-              </a>
-
-              {/* LinkedIn Button */}
-<a
-              href="#"
-              className="border border-white text-xl text-white px-8 py-3 rounded-full font-neue font-medium flex items-center justify-center gap-2 hover:bg-white hover:text-[#5D0ECC] transition"
-            >
-              Connect with me <img src={Vector} className="bg-blue-500  " />
-            </a>
+                <img src={GetIntouchImg} alt="" className="lg:block hidden" />
+                <img
+                    src={GetIntouchMobileImg}
+                    alt=""
+                    className="block lg:hidden size-full object-cover"
+                />
             </div>
-          </div>
-
-          {/* Right Side Gradient */}
-          <div className="">
-            <img src={Frame} alt="" className="hidden md:block absolute right-0 top-0 bottom-0 w-1/2 " />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default GetInTouch;
