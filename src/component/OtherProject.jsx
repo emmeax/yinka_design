@@ -24,7 +24,7 @@ const OtherProject = () => {
     const SLIDES = [...projects, ...projects];
 
     return (
-        <section className="py-[5rem] space-y-[6rem] relative isolate">
+        <section id="work" className="py-[5rem] space-y-[6rem] relative isolate">
             <div className="w-contain">
                 <SectionHeading index="03/" heading="RECENT PROJECTS" />
             </div>

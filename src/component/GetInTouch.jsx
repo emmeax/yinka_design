@@ -6,7 +6,7 @@ import Phone from "./icons/phone";
 
 const GetInTouch = () => {
     return (
-        <section className="w-contain py-[5rem] space-y-[5rem]">
+        <section id="get-in-touch" className="w-contain py-[5rem] space-y-[5rem]">
             <SectionHeading index="07/" heading="GET IN TOUCH" />
 
             <div className="rounded-[40px] lg:bg-[#540D8B] bg-primary flex lg:flex-row flex-col items-center justify-between">

@@ -71,7 +71,7 @@ const Faq = () => {
     };
 
     return (
-        <section className="w-contain py-[5rem] space-y-[5rem]">
+        <section id="faq" className="w-contain py-[5rem] space-y-[5rem]">
             <SectionHeading index="06/" heading="FAQ's" />
 
             <div className="space-y-4 lg:px-[10%]">

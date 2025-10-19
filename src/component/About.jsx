@@ -10,7 +10,10 @@ import Skills from "./Skills";
 
 const About = () => {
     return (
-        <section className="pt-[10rem] pb-[5rem] space-y-[10rem] relative isolate">
+        <section
+            id="about"
+            className="pt-[10rem] pb-[5rem] space-y-[10rem] relative isolate"
+        >
             <div className="w-contain flex flex-col gap-10">
                 <img
                     src={BgDiagonal}
