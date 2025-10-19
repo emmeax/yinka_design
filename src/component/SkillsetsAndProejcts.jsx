@@ -1,11 +1,13 @@
+import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
 import Cube from "../assets/Image/box.svg";
 import CirclesOverlap from "../assets/Image/circles-overlap.svg";
 import { cn } from "../lib/utils";
 import DiscussProject from "./DiscussProject";
 import SectionHeading from "./SectionHeading";
+import Carousel from "./carousel";
 
-const Hero = () => {
+const SkillsetsAndProejcts = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
     const categories = [
@@ -105,34 +107,47 @@ const Hero = () => {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-7 overflow-auto snap-x scrollbar-hide">
+                    <Carousel
+                        options={{ align: "start", loop: true }}
+                        plugins={[
+                            Autoplay({
+                                delay: 3000,
+                                stopOnInteraction: false,
+                                stopOnMouseEnter: true,
+                            }),
+                        ]}
+                        showControls={false}
+                        className="-ml-7"
+                    >
                         {filteredProjects.map(
                             ({ category, desktopImage, tags }, index) => (
                                 <div
                                     key={category + index}
-                                    className="lg:min-w-[618.5px] min-w-[90%] flex flex-col gap-6 snap-start"
+                                    className="min-w-0 flex-shrink-0 flex-grow-0 basis-[90%] lg:basis-[618.5px] pl-7"
                                 >
-                                    <div className="overflow-hidden group lg:h-[350px] h-[194px]">
-                                        <img
-                                            src={desktopImage}
-                                            alt=""
-                                            className="size-full object-cover group-hover:scale-105 transition-transform duration-[600ms]"
-                                        />
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        {tags.map((tag, index) => (
-                                            <span
-                                                key={tag + index}
-                                                className="border border-white rounded-lg px-2.5 py-1"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
+                                    <div className="flex flex-col gap-6">
+                                        <div className="overflow-hidden group lg:h-[350px] h-[194px]">
+                                            <img
+                                                src={desktopImage}
+                                                alt=""
+                                                className="size-full object-cover group-hover:scale-105 transition-transform duration-[600ms]"
+                                            />
+                                        </div>
+                                        <div className="flex items-center gap-4">
+                                            {tags.map((tag, index) => (
+                                                <span
+                                                    key={tag + index}
+                                                    className="border border-white rounded-lg px-2.5 py-1"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             ),
                         )}
-                    </div>
+                    </Carousel>
                 </div>
 
                 <DiscussProject />
@@ -141,4 +156,4 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default SkillsetsAndProejcts;

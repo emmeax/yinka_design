@@ -24,12 +24,33 @@ const OtherProject = () => {
     const SLIDES = [...projects, ...projects];
 
     return (
-        <section id="work" className="py-[5rem] space-y-[6rem] relative isolate">
+        <section
+            id="work"
+            className="py-[5rem] space-y-[6rem] relative isolate"
+        >
             <div className="w-contain">
                 <SectionHeading index="03/" heading="RECENT PROJECTS" />
             </div>
 
-            <Carousel slides={SLIDES} options={OPTIONS} />
+            <Carousel
+                options={OPTIONS}
+                className="ml-[-1rem] sm:ml-[-1.6rem] lg:ml-[-2rem]"
+            >
+                {SLIDES.map(({ image, alt }, index) => (
+                    <div
+                        className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pl-4 sm:pl-[1.6rem] lg:pl-8"
+                        key={index}
+                    >
+                        <div className="h-[19rem] overflow-hidden group">
+                            <img
+                                src={image}
+                                alt={alt}
+                                className="size-full object-cover group-hover:scale-105 transition-transform duration-[600ms]"
+                            />
+                        </div>
+                    </div>
+                ))}
+            </Carousel>
         </section>
     );
 };
