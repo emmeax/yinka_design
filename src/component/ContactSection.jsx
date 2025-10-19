@@ -6,7 +6,10 @@ import SectionHeading from "./SectionHeading";
 
 const ContactSection = () => {
     return (
-        <section className="py-[5rem] space-y-[6rem] relative isolate">
+        <section
+            id="contact"
+            className="py-[5rem] space-y-[6rem] relative isolate"
+        >
             <div className="w-contain flex flex-col gap-10">
                 <SectionHeading index="04/" heading="CONTACT ME" />
 

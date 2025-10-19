@@ -20,7 +20,7 @@ const videoPlaceholders = [
 
 const Testimonial = () => {
     return (
-        <section className="py-[8rem] relative isolate">
+        <section id="testimonial" className="py-[8rem] relative isolate">
             <div className="flex flex-col gap-10">
                 <div className="w-contain">
                     <SectionHeading index="05/" heading="TESTIMONIALS" />

@@ -8,33 +8,22 @@ import Hero from "./component/Hero";
 import Home from "./component/Home";
 import Navbar from "./component/Navbar";
 import OtherProject from "./component/OtherProject";
+import SmoothScroll from "./component/smooth-scroll";
 import Testimonial from "./component/Testimonial";
 
 function App() {
     return (
-        <div>
+        <SmoothScroll>
             <Navbar />
             <Home />
             <Hero />
-            <section id="about">
-                <About />
-            </section>
-            <section id="work">
-                <OtherProject />
-            </section>
-            <section id="contact">
-                <ContactSection />
-            </section>
-            <section id="testimonial">
-                <Testimonial />
-            </section>
-            <section>
-                <Faq />
-            </section>
-            <section>
-                <GetInTouch />
-            </section>
-        </div>
+            <About />
+            <OtherProject />
+            <ContactSection />
+            <Testimonial />
+            <Faq />
+            <GetInTouch />
+        </SmoothScroll>
     );
 }
 
