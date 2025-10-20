@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import React, { useState } from "react";
 import { cn } from "../lib/utils";
 
@@ -19,7 +20,12 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="w-contain font-neue py-4 relative">
+        <motion.nav
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
+            className="w-contain font-neue py-4 relative"
+        >
             <div className="flex md:items-start items-center justify-between text-3xl">
                 {/* Left: Name (Desktop Only) */}
                 <h2>Olayinka D. Adeyefa</h2>
@@ -96,7 +102,7 @@ const Navbar = () => {
                     ))}
                 </ul>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 

@@ -1,4 +1,5 @@
 // import { Home } from 'lucide-react'
+import { MotionConfig } from "motion/react";
 import "./App.css";
 import About from "./component/About";
 import ContactSection from "./component/ContactSection";
@@ -14,15 +15,17 @@ import Testimonial from "./component/Testimonial";
 function App() {
     return (
         <SmoothScroll>
-            <Navbar />
-            <Home />
-            <SkillsetsAndProejcts />
-            <About />
-            <OtherProject />
-            <ContactSection />
-            <Testimonial />
-            <Faq />
-            <GetInTouch />
+            <MotionConfig transition={{ ease: "easeOut" }}>
+                <Navbar />
+                <Home />
+                <SkillsetsAndProejcts />
+                <About />
+                <OtherProject />
+                <ContactSection />
+                <Testimonial />
+                <Faq />
+                <GetInTouch />
+            </MotionConfig>
         </SmoothScroll>
     );
 }
