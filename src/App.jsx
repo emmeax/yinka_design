@@ -5,7 +5,7 @@ import About from "./component/About";
 import ContactSection from "./component/ContactSection";
 import Faq from "./component/Faq";
 import GetInTouch from "./component/GetInTouch";
-import Home from "./component/Home";
+import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
 import OtherProject from "./component/OtherProject";
 import SkillsetsAndProejcts from "./component/SkillsetsAndProejcts";
@@ -17,7 +17,7 @@ function App() {
         <SmoothScroll>
             <MotionConfig transition={{ ease: "easeOut" }}>
                 <Navbar />
-                <Home />
+                <Hero />
                 <SkillsetsAndProejcts />
                 <About />
                 <OtherProject />

@@ -8,12 +8,6 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  background-color: #000;
-}
-
 @font-face {
   font-family: 'NeueMontreal';
   src: url('./assets/neue/NeueMontreal-Regular.otf') format('opentype');
@@ -72,7 +66,7 @@ body,
 
 @layer base {
   body {
-    @apply font-neue text-white bg-black antialiased select-none scrollbar-hide;
+    @apply font-neue text-white bg-foreground antialiased select-none scrollbar-hide;
   }
 }
 
