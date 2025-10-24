@@ -1,4 +1,6 @@
+import { motion } from "motion/react";
 import Arrow from "../assets/Image/arrow.svg";
+import { arrowScrollVariants } from "../lib/motion";
 import { cn } from "../lib/utils";
 
 const DiscussProject = ({ className }) => {
@@ -9,11 +11,27 @@ const DiscussProject = ({ className }) => {
                 className,
             )}
         >
-            <img
-                src={Arrow}
-                alt="Arrow"
-                className="lg:size-[5.75rem] size-14"
-            />
+            <div className="relative overflow-hidden py-[var(--padding)] [--padding:1rem]">
+                <motion.img
+                    variants={arrowScrollVariants("-100%", "0")}
+                    initial="hidden"
+                    animate="visible"
+                    src={Arrow}
+                    alt="Arrow"
+                    className="lg:size-[5.75rem] size-14 absolute -translate-y-full"
+                />
+                <motion.img
+                    variants={arrowScrollVariants(
+                        "0",
+                        "calc(100% + var(--padding))",
+                    )}
+                    initial="hidden"
+                    animate="visible"
+                    src={Arrow}
+                    alt="Arrow"
+                    className="lg:size-[5.75rem] size-14"
+                />
+            </div>
 
             <p className="font-technor lg:text-[2.5rem] text-[35px]">
                 <span

@@ -39,7 +39,7 @@ const Testimonial = () => {
                     </div>
 
                     <h2 className="lg:absolute lg:-bottom-10 lg:text-5xl text-2xl text-center">
-                        <span className="font-medium">
+                        <span className="font-medium text-primary">
                             Trusted by top companies
                         </span>
                         <br />

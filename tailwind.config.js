@@ -4,7 +4,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#A22CFF",
+                primary: {
+                    DEFAULT: "#A22CFF",
+                    100: "#7A21BF",
+                },
+                foreground: "#120120",
             },
             fontFamily: {
                 neue: ["NeueMontreal", "sans-serif"],

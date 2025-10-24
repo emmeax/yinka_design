@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import React, { useState } from "react";
+import { navbarVariants } from "../lib/motion";
 import { cn } from "../lib/utils";
 
 const Navbar = () => {
@@ -21,9 +22,10 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1.5 }}
+            variants={navbarVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 1.2, duration: 1 }}
             className="w-contain font-neue py-4 relative"
         >
             <div className="flex md:items-start items-center justify-between text-3xl">
@@ -31,59 +33,57 @@ const Navbar = () => {
                 <h2>Olayinka D. Adeyefa</h2>
 
                 {/* Right Section */}
-                <div className="md:flex hidden items-start gap-[10rem]">
-                    <p className="text-left">
-                        <span>Probably:</span>
-                        <br />
-                        <span className="text-primary">At the Gym</span>
-                    </p>
-                    {/* Desktop Nav Links */}
-                    <div className="flex items-center gap-3">
-                        {navLinks.map((link, idx) => (
-                            <span
-                                key={idx}
-                                onClick={() => handleScroll(link.id)}
-                                className="cursor-pointer hover:text-primary transition"
-                            >
-                                {link.label}
-                                {idx !== navLinks.length - 1 && ","}
-                            </span>
-                        ))}
-                    </div>
+                <p className="text-left">
+                    <span>Probably:</span>
+                    <br />
+                    <span className="text-primary">
+                        At the Gym or Home office
+                    </span>
+                </p>
+                {/* Desktop Nav Links */}
+                <div className="flex items-center gap-3">
+                    {navLinks.map((link, idx) => (
+                        <span
+                            key={idx}
+                            onClick={() => handleScroll(link.id)}
+                            className="cursor-pointer hover:text-primary transition"
+                        >
+                            {link.label}
+                            {idx !== navLinks.length - 1 && ","}
+                        </span>
+                    ))}
                 </div>
-
-                {/* Mobile Toggle Button (Right aligned) */}
-                <button
-                    type="button"
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={isOpen ? "true" : "false"}
-                    className="md:hidden inline-flex items-center justify-center size-10"
-                    onClick={() => setIsOpen((prev) => !prev)}
-                >
-                    <div className="flex items-center *:transition-all *:duration-300 [--bar-width:1.5rem]">
-                        {/* Top bar */}
-                        <div
-                            className={cn(
-                                "h-0.5 bg-white w-[var(--bar-width)] translate-x-full",
-                                { "-translate-y-2": !isOpen },
-                            )}
-                        />
-                        {/* Middle bar */}
-                        <div
-                            className={cn(
-                                "h-0.5 bg-white w-[var(--bar-width)]",
-                            )}
-                        />
-                        {/* Bottom bar */}
-                        <div
-                            className={cn(
-                                "h-0.5 bg-white w-[var(--bar-width)] -translate-x-full",
-                                { "translate-y-2": !isOpen },
-                            )}
-                        />
-                    </div>
-                </button>
             </div>
+
+            {/* Mobile Toggle Button (Right aligned) */}
+            <button
+                type="button"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen ? "true" : "false"}
+                className="md:hidden inline-flex items-center justify-center size-10"
+                onClick={() => setIsOpen((prev) => !prev)}
+            >
+                <div className="flex items-center *:transition-all *:duration-300 [--bar-width:1.5rem]">
+                    {/* Top bar */}
+                    <div
+                        className={cn(
+                            "h-0.5 bg-white w-[var(--bar-width)] translate-x-full",
+                            { "-translate-y-2": !isOpen },
+                        )}
+                    />
+                    {/* Middle bar */}
+                    <div
+                        className={cn("h-0.5 bg-white w-[var(--bar-width)]")}
+                    />
+                    {/* Bottom bar */}
+                    <div
+                        className={cn(
+                            "h-0.5 bg-white w-[var(--bar-width)] -translate-x-full",
+                            { "translate-y-2": !isOpen },
+                        )}
+                    />
+                </div>
+            </button>
 
             {/* Mobile Nav Menu */}
             <div

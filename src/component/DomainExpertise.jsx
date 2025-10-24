@@ -46,8 +46,8 @@ const DomainExpertise = () => {
                 <span>Domain Expertise</span>
             </h2>
             <p className="mb-12 text-2xl text-left">
-                Beyond general AI product management skills, domain-specific
-                expertise is increasingly important:
+                Beyond general Design skills, domain-specific expertise is vital
+                here are Industries I have been very familiar:
             </p>
 
             <div className="grid lg:grid-cols-3 text-left gap-5">

@@ -20,7 +20,7 @@ const OtherProject = () => {
         },
     ];
 
-    const OPTIONS = { align: "start", loop: true };
+    const OPTIONS = { align: "center", loop: true };
     const SLIDES = [...projects, ...projects];
 
     return (
@@ -34,11 +34,14 @@ const OtherProject = () => {
 
             <Carousel
                 options={OPTIONS}
-                className="ml-[-1rem] sm:ml-[-1.6rem] lg:ml-[-2rem]"
+                // type="scale"
+                // tweenFactorBase={0.15}
+                // minScale={0.85}
+                className="ml-[-1rem] lg:ml-[-1.5rem]"
             >
                 {SLIDES.map(({ image, alt }, index) => (
                     <div
-                        className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pl-4 sm:pl-[1.6rem] lg:pl-8"
+                        className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 lg:pl-[1.5rem] pl-[1rem]"
                         key={index}
                     >
                         <div className="h-[19rem] overflow-hidden group">
