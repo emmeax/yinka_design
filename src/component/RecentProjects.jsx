@@ -1,7 +1,9 @@
+import { carouselItemVariants } from "@/lib/motion";
+import { motion } from "motion/react";
 import Carousel from "./carousel";
 import SectionHeading from "./SectionHeading";
 
-const OtherProject = () => {
+const RecentProjects = () => {
     const projects = [
         {
             image: "https://res.cloudinary.com/ddjnrebkn/image/upload/v1746184606/all%20folder/980dd90941d61c4621dddd90073b3f416be2f4ce_vs2nsn.jpg",
@@ -20,7 +22,7 @@ const OtherProject = () => {
         },
     ];
 
-    const OPTIONS = { align: "center", loop: true };
+    const OPTIONS = { align: "start", loop: true };
     const SLIDES = [...projects, ...projects];
 
     return (
@@ -40,9 +42,19 @@ const OtherProject = () => {
                 className="ml-[-1rem] lg:ml-[-1.5rem]"
             >
                 {SLIDES.map(({ image, alt }, index) => (
-                    <div
-                        className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 lg:pl-[1.5rem] pl-[1rem]"
+                    <motion.div
+                        variants={carouselItemVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        exit="exit"
+                        transition={{
+                            type: "spring",
+                            delay: index * 0.1,
+                            duration: 0.8,
+                        }}
+                        viewport={{ once: true }}
                         key={index}
+                        className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 lg:pl-[1.5rem] pl-[1rem]"
                     >
                         <div className="h-[19rem] overflow-hidden group">
                             <img
@@ -51,11 +63,11 @@ const OtherProject = () => {
                                 className="size-full object-cover group-hover:scale-105 transition-transform duration-[600ms]"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </Carousel>
         </section>
     );
 };
 
-export default OtherProject;
+export default RecentProjects;

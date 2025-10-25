@@ -28,7 +28,7 @@ const SkillsetsAndProejcts = () => {
                         variants={containerVariants(0.1)}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         className="flex items-center justify-between lg:gap-7 gap-4 overflow-auto scrollbar-hide"
                     >
                         {categories.map((category, index) => (
@@ -75,6 +75,7 @@ const SkillsetsAndProejcts = () => {
                                             delay: index * 0.1,
                                             duration: 0.8,
                                         }}
+                                        viewport={{ once: true }}
                                         className="min-w-0 flex-shrink-0 flex-grow-0 basis-[90%] lg:basis-[618.5px] pl-7"
                                     >
                                         <div className="flex flex-col gap-6">

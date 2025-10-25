@@ -3,7 +3,7 @@ import CirclesOverlap from "../assets/Image/circles-overlap.svg";
 import Profilepics from "../assets/Image/Profilepics.jpg";
 import {
     containerVariants,
-    imageClipPathVariants,
+    imageClipUpVariants,
     itemVariants,
 } from "../lib/motion";
 import Document from "./icons/document";
@@ -60,7 +60,7 @@ const Hero = () => {
                 className="lg:w-[25%] flex flex-col gap-6"
             >
                 <motion.img
-                    variants={imageClipPathVariants}
+                    variants={imageClipUpVariants}
                     src={Profilepics}
                     alt=""
                     className="size-full object-cover"

@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import Arrow from "../assets/Image/arrow.svg";
-import { arrowScrollVariants } from "../lib/motion";
+import { arrowScrollVariants, slideUpVariants } from "../lib/motion";
 import { cn } from "../lib/utils";
 
 const DiscussProject = ({ className }) => {
@@ -33,7 +33,13 @@ const DiscussProject = ({ className }) => {
                 />
             </div>
 
-            <p className="font-technor lg:text-[2.5rem] text-[35px]">
+            <motion.p
+                variants={slideUpVariants()}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="font-technor lg:text-[2.5rem] text-[35px]"
+            >
                 <span
                     className="text-primary cursor-pointer"
                     onClick={() => {
@@ -47,7 +53,7 @@ const DiscussProject = ({ className }) => {
                     }}
                 >{`(< CLICK HERE)`}</span>{" "}
                 <span className="">IF YOU'D LIKE TO DISCUSS A PROJECT</span>
-            </p>
+            </motion.p>
         </div>
     );
 };

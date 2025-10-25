@@ -1,4 +1,6 @@
+import { containerVariants, slideUpVariants } from "@/lib/motion";
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "motion/react";
 import { useCallback, useEffect, useRef } from "react";
 import { cn } from "../../lib/utils";
 import { NextButton, PrevButton } from "./CarouselArrowButtons";
@@ -126,8 +128,14 @@ const Carousel = (props) => {
             </div>
 
             {showControls && (
-                <div className="w-contain grid grid-cols-[1fr_auto] justify-between gap-[1.2rem] mt-8">
-                    <div className="flex flex-wrap justify-start items-center -mr-[0.6rem]">
+                <motion.div
+                    variants={containerVariants()}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="w-contain grid grid-cols-[1fr_auto] justify-between gap-[1.2rem] mt-8"
+                >
+                    <motion.div variants={slideUpVariants()}>
                         {scrollSnaps.map((_, index) => (
                             <DashButton
                                 key={index}
@@ -141,9 +149,12 @@ const Carousel = (props) => {
                                 )}
                             />
                         ))}
-                    </div>
+                    </motion.div>
 
-                    <div className="grid grid-cols-2 gap-[0.6rem] items-center">
+                    <motion.div
+                        variants={slideUpVariants()}
+                        className="grid grid-cols-2 gap-[0.6rem] items-center"
+                    >
                         <PrevButton
                             onClick={onPrevButtonClick}
                             disabled={prevBtnDisabled}
@@ -152,8 +163,8 @@ const Carousel = (props) => {
                             onClick={onNextButtonClick}
                             disabled={nextBtnDisabled}
                         />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             )}
         </section>
     );

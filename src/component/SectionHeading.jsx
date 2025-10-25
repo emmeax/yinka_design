@@ -1,4 +1,4 @@
-import { containerVariants } from "@/lib/motion";
+import { containerVariants, slideUpVariants } from "@/lib/motion";
 import { motion } from "motion/react";
 
 const SectionHeading = ({ index, heading }) => {
@@ -11,13 +11,13 @@ const SectionHeading = ({ index, heading }) => {
             className="flex lg:items-center items-start lg:gap-1 gap-2 overflow-hidden"
         >
             <motion.span
-                variants={spanVariants}
+                variants={slideUpVariants()}
                 className="lg:text-6xl text-3xl text-primary"
             >
                 {index}
             </motion.span>
             <motion.span
-                variants={spanVariants}
+                variants={slideUpVariants()}
                 className="lg:text-7xl text-5xl leading-[100%] font-technor font-medium text-white"
             >
                 {heading}
@@ -27,16 +27,3 @@ const SectionHeading = ({ index, heading }) => {
 };
 
 export default SectionHeading;
-
-/** @type {import('motion/react').Variants} */
-const spanVariants = {
-    hidden: { opacity: 0, y: "100%" },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-            duration: 1,
-        },
-    },
-};
