@@ -33,15 +33,16 @@ const Navbar = () => {
                 <h2>Olayinka D. Adeyefa</h2>
 
                 {/* Right Section */}
-                <p className="text-left">
+                <p className="lg:block hidden text-left">
                     <span>Probably:</span>
                     <br />
                     <span className="text-primary">
                         At the Gym or Home office
                     </span>
                 </p>
+
                 {/* Desktop Nav Links */}
-                <div className="flex items-center gap-3">
+                <div className="lg:flex hidden items-center gap-3">
                     {navLinks.map((link, idx) => (
                         <span
                             key={idx}
@@ -53,48 +54,50 @@ const Navbar = () => {
                         </span>
                     ))}
                 </div>
-            </div>
 
-            {/* Mobile Toggle Button (Right aligned) */}
-            <button
-                type="button"
-                aria-label={isOpen ? "Close menu" : "Open menu"}
-                aria-expanded={isOpen ? "true" : "false"}
-                className="md:hidden inline-flex items-center justify-center size-10"
-                onClick={() => setIsOpen((prev) => !prev)}
-            >
-                <div className="flex items-center *:transition-all *:duration-300 [--bar-width:1.5rem]">
-                    {/* Top bar */}
-                    <div
-                        className={cn(
-                            "h-0.5 bg-white w-[var(--bar-width)] translate-x-full",
-                            { "-translate-y-2": !isOpen },
-                        )}
-                    />
-                    {/* Middle bar */}
-                    <div
-                        className={cn("h-0.5 bg-white w-[var(--bar-width)]")}
-                    />
-                    {/* Bottom bar */}
-                    <div
-                        className={cn(
-                            "h-0.5 bg-white w-[var(--bar-width)] -translate-x-full",
-                            { "translate-y-2": !isOpen },
-                        )}
-                    />
-                </div>
-            </button>
+                {/* Mobile Toggle Button (Right aligned) */}
+                <button
+                    type="button"
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen ? "true" : "false"}
+                    className="md:hidden inline-flex items-center justify-center size-10"
+                    onClick={() => setIsOpen((prev) => !prev)}
+                >
+                    <div className="flex items-center *:transition-all *:duration-300 [--bar-width:1.5rem]">
+                        {/* Top bar */}
+                        <div
+                            className={cn(
+                                "h-0.5 bg-white w-[var(--bar-width)] translate-x-full",
+                                { "-translate-y-2": !isOpen },
+                            )}
+                        />
+                        {/* Middle bar */}
+                        <div
+                            className={cn(
+                                "h-0.5 bg-white w-[var(--bar-width)]",
+                            )}
+                        />
+                        {/* Bottom bar */}
+                        <div
+                            className={cn(
+                                "h-0.5 bg-white w-[var(--bar-width)] -translate-x-full",
+                                { "translate-y-2": !isOpen },
+                            )}
+                        />
+                    </div>
+                </button>
+            </div>
 
             {/* Mobile Nav Menu */}
             <div
                 className={cn(
-                    "md:hidden absolute inset-x-0 translate-y-4 z-50 bg-black transition-all duration-300",
+                    "md:hidden absolute inset-x-0 translate-y-4 z-50 bg-background transition-all duration-300",
                     isOpen
-                        ? "[clip-path:inset(0_0_0_0)] max-h-dvh py-6"
+                        ? "[clip-path:inset(0_0_0_0)] max-h-dvh pt-6 pb-8"
                         : "[clip-path:inset(0_0_100%_0)] max-h-0 py-0",
                 )}
             >
-                <ul className="flex flex-col items-center gap-4">
+                <ul className="flex flex-col items-center gap-4 text-xl">
                     {navLinks.map((link, idx) => (
                         <span key={idx} onClick={() => handleScroll(link.id)}>
                             {link.label}
