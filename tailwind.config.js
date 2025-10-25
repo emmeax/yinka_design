@@ -8,7 +8,7 @@ export default {
                     DEFAULT: "#A22CFF",
                     100: "#7A21BF",
                 },
-                foreground: "#120120",
+                background: "#120120",
             },
             fontFamily: {
                 neue: ["NeueMontreal", "sans-serif"],

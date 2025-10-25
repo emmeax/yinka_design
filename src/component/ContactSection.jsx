@@ -13,12 +13,20 @@ const ContactSection = () => {
             className="py-[5rem] space-y-[6rem] relative isolate"
         >
             <div className="w-contain flex flex-col gap-10 relative">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between overflow-hidden">
                     <SectionHeading index="04/" heading="CONTACT ME" />
                     <motion.h4
                         initial={{ opacity: 0, x: "100%" }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ type: "spring", delay: 1.5, duration: 1 }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                type: "spring",
+                                delay: 1,
+                                duration: 1,
+                            },
+                        }}
+                        viewport={{ once: true }}
                         className="text-3xl lg:inline-flex hidden"
                     >
                         FOR Digital Design
@@ -46,10 +54,18 @@ const ContactSection = () => {
                     </p>
                     <div className="flex items-center gap-4">
                         <a href="">
-                            <img src={LinkedIn} alt="" />
+                            <img
+                                src={LinkedIn}
+                                alt=""
+                                className="lg:size-[6rem] size-[4.375rem]"
+                            />
                         </a>
                         <a href="">
-                            <img src={Contra} alt="" />
+                            <img
+                                src={Contra}
+                                alt=""
+                                className="lg:w-[21.125rem] w-[11.875rem]"
+                            />
                         </a>
                     </div>
                 </div>
