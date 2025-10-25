@@ -1,4 +1,6 @@
+import { containerVariants, slideUpVariants } from "@/lib/motion";
 import { Award } from "lucide-react";
+import { motion } from "motion/react";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import {
@@ -52,16 +54,31 @@ const SkillsChart = () => {
 
     return (
         <div>
-            <h2 className="text-2xl lg:text-3xl font-technor font-medium mb-8 text-left flex items-center gap-2">
-                <Award className="text-primary h-[30px] w-[30px]" />
-                <span>Skills</span>
-            </h2>
+            <motion.h2
+                variants={containerVariants()}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-2xl lg:text-3xl font-technor font-medium mb-8 text-left flex items-center gap-2"
+            >
+                <motion.div variants={slideUpVariants()}>
+                    <Award className="text-primary h-[30px] w-[30px]" />
+                </motion.div>
+                <motion.span variants={slideUpVariants()}>Skills</motion.span>
+            </motion.h2>
 
-            <div
+            <motion.div
+                variants={containerVariants(0.2)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
                 className={`flex flex-col ${isMobile ? "" : "lg:flex-row"}   `}
             >
                 {/* Technical Skills */}
-                <div className="w-full lg:w-1/2">
+                <motion.div
+                    variants={slideUpVariants()}
+                    className="w-full lg:w-1/2"
+                >
                     <h3 className="lg:text-2xl text-xl text-center lg:mr-44 lg:ml-0 ml-20 text-white">
                         Technical Skills
                     </h3>
@@ -98,10 +115,13 @@ const SkillsChart = () => {
                             <Bar dataKey="value" fill="white" barSize={28} />
                         </BarChart>
                     </ResponsiveContainer>
-                </div>
+                </motion.div>
 
                 {/* Soft Skills */}
-                <div className="w-full lg:w-1/2 ">
+                <motion.div
+                    variants={slideUpVariants()}
+                    className="w-full lg:w-1/2 "
+                >
                     <h3 className="lg:text-2xl text-xl text-center text-white lg:mr-56 lg:ml-0 ml-12">
                         Soft Skills
                     </h3>
@@ -144,8 +164,8 @@ const SkillsChart = () => {
                             </Bar>
                         </BarChart>
                     </ResponsiveContainer>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };

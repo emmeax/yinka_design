@@ -1,4 +1,6 @@
+import { containerVariants, slideUpVariants } from "@/lib/motion";
 import { Minus, Plus } from "lucide-react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { cn } from "../lib/utils";
 import SectionHeading from "./SectionHeading";
@@ -28,7 +30,10 @@ const faqs = [
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
     return (
-        <div className="rounded-2xl p-5 bg-[linear-gradient(122.27deg,_#310E4C_75.91%,_rgba(142,_24,_234,_0.54)_98.49%)]">
+        <motion.div
+            variants={slideUpVariants(0.5)}
+            className="rounded-2xl p-5 bg-[linear-gradient(122.27deg,_#310E4C_75.91%,_rgba(142,_24,_234,_0.54)_98.49%)]"
+        >
             <div
                 className="flex justify-between items-start cursor-pointer"
                 onClick={onClick}
@@ -36,14 +41,20 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
                 <h3 className="text-xl font-syne font-semibold">{question}</h3>
                 <div className="shrink-0 size-[30px] relative flex justify-center items-center rounded-full bg-[#F8F9FF] text-primary">
                     <Minus
-                        className={cn("opacity-0 invisible size-[16.25px] absolute transition-all duration-300 ease-in-out", {
-                            "opacity-100 visible": isOpen,
-                        })}
+                        className={cn(
+                            "opacity-0 invisible size-[16.25px] absolute transition-all duration-300 ease-in-out",
+                            {
+                                "opacity-100 visible": isOpen,
+                            },
+                        )}
                     />
                     <Plus
-                        className={cn("opacity-0 invisible size-[16.25px] absolute transition-all duration-300 ease-in-out", {
-                            "opacity-100 visible": !isOpen,
-                        })}
+                        className={cn(
+                            "opacity-0 invisible size-[16.25px] absolute transition-all duration-300 ease-in-out",
+                            {
+                                "opacity-100 visible": !isOpen,
+                            },
+                        )}
                     />
                 </div>
             </div>
@@ -59,7 +70,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
                     <p className="mt-4">{answer}</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -74,7 +85,13 @@ const Faq = () => {
         <section id="faq" className="w-contain py-[5rem] space-y-[5rem]">
             <SectionHeading index="06/" heading="FAQ's" />
 
-            <div className="space-y-4 lg:px-[10%]">
+            <motion.div
+                variants={containerVariants(0.2)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="space-y-4 lg:px-[10%]"
+            >
                 {faqs.map((faq, index) => (
                     <AccordionItem
                         key={index}
@@ -84,7 +101,7 @@ const Faq = () => {
                         onClick={() => handleClick(index)}
                     />
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };

@@ -33,7 +33,7 @@ export const itemVariants = {
 };
 
 /** @type {import('motion/react').Variants} */
-export const imageClipPathVariants = {
+export const imageClipUpVariants = {
     hidden: {
         clipPath: "inset(100% 0 0 0)",
     },
@@ -95,3 +95,27 @@ export const arrowScrollVariants = (initialY, targetY) => ({
         },
     },
 });
+
+/** @type {(duration?: number) => import('motion/react').Variants} */
+export const slideUpVariants = (duration = 1) => ({
+    hidden: { opacity: 0, y: "100%" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            duration,
+        },
+    },
+});
+
+/** @type {import('motion/react').Variants} */
+export const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 1,
+        },
+    },
+};

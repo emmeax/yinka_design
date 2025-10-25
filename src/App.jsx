@@ -7,7 +7,7 @@ import Faq from "./component/Faq";
 import GetInTouch from "./component/GetInTouch";
 import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
-import OtherProject from "./component/OtherProject";
+import RecentProjects from "./component/RecentProjects";
 import SkillsetsAndProejcts from "./component/SkillsetsAndProejcts";
 import SmoothScroll from "./component/smooth-scroll";
 import Testimonial from "./component/Testimonial";
@@ -20,7 +20,7 @@ function App() {
                 <Hero />
                 <SkillsetsAndProejcts />
                 <About />
-                <OtherProject />
+                <RecentProjects />
                 <ContactSection />
                 <Testimonial />
                 <Faq />

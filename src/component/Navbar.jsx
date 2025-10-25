@@ -25,7 +25,7 @@ const Navbar = () => {
             variants={navbarVariants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 1.2, duration: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
             className="w-contain font-neue py-4 relative"
         >
             <div className="flex md:items-start items-center justify-between text-3xl">

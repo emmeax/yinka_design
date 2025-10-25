@@ -1,4 +1,8 @@
-import { bounceVariants } from "@/lib/motion";
+import {
+    bounceVariants,
+    containerVariants,
+    slideUpVariants,
+} from "@/lib/motion";
 import { motion } from "motion/react";
 import React from "react";
 import aboutshape from "../assets/Image/aboutshape.png";
@@ -38,19 +42,35 @@ const About = () => {
                 <SectionHeading index="02/" heading="ABOUT ME" />
 
                 <div className="lg:px-[10%] space-y-8 mx-auto lg:text-2xl text-xl relative">
-                    <h3 className="text-3xl text-primary font-semibold font-technor">
+                    <motion.h3
+                        variants={slideUpVariants()}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="text-3xl text-primary font-semibold font-technor"
+                    >
                         Olayinka D. Adeyefa
-                    </h3>
+                    </motion.h3>
 
                     <p className="flex flex-col gap-8">
-                        <span>
+                        <motion.span
+                            variants={slideUpVariants()}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
                             Over the last & year I have honed my skills on
                             projects ranging from Websites to
                             <br className="lg-br" /> Brand Identity projects to
                             Pitch Decks and more, My Design versatility are not
                             <br className="lg-br" /> the extent of my abilities.
-                        </span>
-                        <span>
+                        </motion.span>
+                        <motion.span
+                            variants={slideUpVariants()}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
                             I have experience as a Creative director and
                             Project/Product Manager delivery
                             <br className="lg-br" /> over a dozen projects
@@ -62,27 +82,49 @@ const About = () => {
                             <br className="lg-br" />
                             Developers and Engineers to successfully Deliver a
                             Project
-                        </span>
+                        </motion.span>
                     </p>
 
                     <div className="lg:text-[2.5rem] text-3xl leading-[1.2]">
-                        <p>
+                        <motion.p
+                            variants={slideUpVariants()}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
                             I can comfortably contribute to projects with my
                             knowledge and provable experience in the following
                             fields
-                        </p>
-                        <ul className="list-disc pl-12">
+                        </motion.p>
+                        <motion.ul
+                            variants={containerVariants()}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            className="list-disc pl-12"
+                        >
                             {skills.map((skill, index) => (
-                                <li key={index}>{skill}</li>
+                                <motion.li
+                                    variants={slideUpVariants()}
+                                    key={index}
+                                >
+                                    {skill}
+                                </motion.li>
                             ))}
-                        </ul>
+                        </motion.ul>
                     </div>
 
-                    <p className="text-primary">
+                    <motion.p
+                        variants={slideUpVariants()}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="text-primary"
+                    >
                         My uncanny ability to bring creative thinking and
                         excellent execution to project is what makes me one
                         <br className="lg-br" /> of the best at what I do
-                    </p>
+                    </motion.p>
 
                     <motion.img
                         variants={bounceVariants()}

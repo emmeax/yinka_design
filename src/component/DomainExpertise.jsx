@@ -1,3 +1,6 @@
+import { containerVariants, slideUpVariants } from "@/lib/motion";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { useRef } from "react";
 import database from "../assets/Image/database.png";
 import { cn } from "../lib/utils";
 
@@ -35,22 +38,53 @@ const expertiseData = [
 ];
 
 const DomainExpertise = () => {
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ["start end", "end start"],
+    });
+    const scaleTransform = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
+    const scale = useSpring(scaleTransform, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+
     return (
         <div>
-            <h2 className="text-2xl lg:text-3xl font-technor font-medium mb-4 text-left flex items-center gap-2">
-                <img
+            <motion.h2
+                variants={containerVariants()}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-2xl lg:text-3xl font-technor font-medium mb-4 text-left flex items-center gap-2"
+            >
+                <motion.img
+                    variants={slideUpVariants()}
                     src={database}
                     alt="Database Icon"
                     className="h-[30px] w-[30px]"
                 />
-                <span>Domain Expertise</span>
-            </h2>
-            <p className="mb-12 text-2xl text-left">
+                <motion.span variants={slideUpVariants()}>
+                    Domain Expertise
+                </motion.span>
+            </motion.h2>
+            <motion.p
+                variants={slideUpVariants()}
+                initial="hidden"
+                whileInView="visible"
+                className="mb-12 text-2xl text-left"
+            >
                 Beyond general Design skills, domain-specific expertise is vital
                 here are Industries I have been very familiar:
-            </p>
+            </motion.p>
 
-            <div className="grid lg:grid-cols-3 text-left gap-5">
+            {/* Expertises Grid */}
+            <motion.div
+                ref={targetRef}
+                style={{ scale }}
+                className="grid lg:grid-cols-3 text-left gap-5"
+            >
                 {expertiseData.map((item, index) => (
                     <div
                         key={index}
@@ -71,7 +105,7 @@ const DomainExpertise = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };
