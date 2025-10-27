@@ -3,26 +3,17 @@ import { Award } from "lucide-react";
 import { motion } from "motion/react";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import {
-    Bar,
-    BarChart,
-    CartesianGrid,
-    LabelList,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis,
-} from "recharts";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const technicalSkills = [
-    { name: "AI/ML Knowledge", value: 85 },
-    { name: "Software Engineering", value: 88 },
+    { name: "AI & Software Knowledge", value: 85 },
+    { name: "Motion Design ", value: 75 },
     { name: "Product Lifecycle Management", value: 95 },
-    { name: "Prompt Engineering", value: 98 },
+    { name: "Writing & Prompt Engineering", value: 98 },
     { name: "Product Design", value: 94 },
     { name: "Digital Marketing", value: 89 },
-    { name: "Tech Sales Strategy &Systemization", value: 96 },
-    { name: "Market Analysis", value: 87 },
+    { name: "Website & Landing page Deisgn", value: 96 },
+    { name: "Market Research", value: 87 },
 ];
 
 const softSkills = [
@@ -50,7 +41,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const SkillsChart = () => {
-    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const isMobile = useMediaQuery({ maxWidth: 1024 });
 
     return (
         <div>
@@ -72,96 +63,60 @@ const SkillsChart = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className={`flex flex-col ${isMobile ? "" : "lg:flex-row"}   `}
+                className="flex flex-col lg:flex-row lg:gap-[4rem] gap-10"
             >
                 {/* Technical Skills */}
-                <motion.div
-                    variants={slideUpVariants()}
-                    className="w-full lg:w-1/2"
-                >
-                    <h3 className="lg:text-2xl text-xl text-center lg:mr-44 lg:ml-0 ml-20 text-white">
-                        Technical Skills
-                    </h3>
-                    <ResponsiveContainer
-                        width="103%"
-                        height={isMobile ? 500 : 400}
-                    >
+                <motion.div variants={slideUpVariants()} className="w-full lg:w-1/2">
+                    <h3 className="lg:text-2xl text-xl text-white pl-[155px] mb-4">Technical Skills</h3>
+                    <ResponsiveContainer aspect={1.5}>
                         <BarChart
                             layout="vertical"
                             data={technicalSkills}
                             margin={{
-                                top: 20,
-                                right: 30,
-                                left: 100,
-                                bottom: 20,
+                                top: 0,
+                                right: isMobile ? 50 : 0,
+                                left: 5,
+                                bottom: 0,
                             }}
                         >
-                            <CartesianGrid
-                                strokeDasharray="3 3"
-                                stroke="#A22CFF"
-                            />
-                            <XAxis
-                                type="number"
-                                domain={[0, 100]}
-                                tick={{ fill: "#A22CFF" }}
-                            />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#A22CFF" />
+                            <XAxis type="number" domain={[0, 100]} tick={{ fill: "#A22CFF" }} />
                             <YAxis
                                 dataKey="name"
                                 type="category"
-                                tick={{ fill: "#A22CFF", fontSize: 15 }}
-                                width={50}
+                                tick={{ fill: "#A22CFF", fontSize: isMobile ? 12 : 18, whiteSpace: "pre-line" }}
+                                width={150}
                             />
                             <Tooltip content={<CustomTooltip />} />
-                            <Bar dataKey="value" fill="white" barSize={28} />
+                            <Bar dataKey="value" fill="white" />
                         </BarChart>
                     </ResponsiveContainer>
                 </motion.div>
 
                 {/* Soft Skills */}
-                <motion.div
-                    variants={slideUpVariants()}
-                    className="w-full lg:w-1/2 "
-                >
-                    <h3 className="lg:text-2xl text-xl text-center text-white lg:mr-56 lg:ml-0 ml-12">
-                        Soft Skills
-                    </h3>
-                    <ResponsiveContainer
-                        width="100%"
-                        height={isMobile ? 500 : 400}
-                    >
+                <motion.div variants={slideUpVariants()} className="w-full lg:w-1/2">
+                    <h3 className="lg:text-2xl text-xl text-white pl-[155px] mb-4">Soft Skills</h3>
+                    <ResponsiveContainer aspect={1.5}>
                         <BarChart
                             layout="vertical"
                             data={softSkills}
                             margin={{
-                                top: 25,
-                                right: 30,
-                                left: 100,
-                                bottom: 20,
+                                top: 0,
+                                right: isMobile ? 50 : 0,
+                                left: 5,
+                                bottom: 0,
                             }}
                         >
-                            <CartesianGrid
-                                strokeDasharray="3 3"
-                                stroke="#A22CFF"
-                            />
-                            <XAxis
-                                type="number"
-                                domain={[0, 100]}
-                                tick={{ fill: "#A22CFF" }}
-                            />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#A22CFF" />
+                            <XAxis type="number" domain={[0, 100]} tick={{ fill: "#A22CFF" }} />
                             <YAxis
                                 dataKey="name"
                                 type="category"
-                                tick={{ fill: "#A22CFF", fontSize: 15 }}
-                                width={50}
+                                tick={{ fill: "#A22CFF", fontSize: isMobile ? 12 : 18, whiteSpace: "pre-line" }}
+                                width={150}
                             />
                             <Tooltip content={<CustomTooltip />} />
-                            <Bar dataKey="value" fill="white" barSize={28}>
-                                <LabelList
-                                    dataKey=""
-                                    position="right"
-                                    fill="#A22CFF"
-                                />
-                            </Bar>
+                            <Bar dataKey="value" fill="white" />
                         </BarChart>
                     </ResponsiveContainer>
                 </motion.div>

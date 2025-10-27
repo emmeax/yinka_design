@@ -14,7 +14,7 @@ import Testimonial from "./component/Testimonial";
 
 function App() {
     return (
-        <SmoothScroll>
+        //<SmoothScroll>
             <MotionConfig transition={{ ease: "easeOut" }}>
                 <Navbar />
                 <Hero />
@@ -26,7 +26,7 @@ function App() {
                 <Faq />
                 <GetInTouch />
             </MotionConfig>
-        </SmoothScroll>
+        //</SmoothScroll>
     );
 }
 
