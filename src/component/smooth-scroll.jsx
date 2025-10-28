@@ -17,7 +17,7 @@ const SmoothScroll = ({ children }) => {
     }, []);
 
     return (
-        <ReactLenis root options={{ lerp: 0.05 }} ref={lenisRef}>
+        <ReactLenis root options={{ lerp: 0.1 }} ref={lenisRef}>
             {children}
         </ReactLenis>
     );
