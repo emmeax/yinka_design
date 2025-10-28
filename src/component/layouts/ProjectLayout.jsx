@@ -1,5 +1,5 @@
 import ArrowLeft from "@/component/icons/arrow-left";
-import { projectsByCategory } from "@/lib/data";
+import { categories as allCategories, projects } from "@/lib/data";
 import { containerVariants, slideUpVariants } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
@@ -9,8 +9,9 @@ const ProjectLayout = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
 
-    const projectCategory = projectsByCategory.find((category) => category.projects.some((p) => p.slug === slug));
-    const categories = ["All", ...projectsByCategory.map((category) => category.name)];
+    const project = projects.find((p) => p.slug === slug);
+    const projectCategoryName = project ? project.categories[0] : null; // Get the first category
+    const categories = ["All", ...allCategories];
 
     return (
         <main className="w-contain pb-20 pt-12">
@@ -30,7 +31,7 @@ const ProjectLayout = () => {
                             className={cn(
                                 "flex items-center justify-center lg:h-[4.5rem] h-[30px] lg:rounded-[20px] rounded-[9px] lg:px-9 px-3 lg:py-5 py-2.5 lg:text-2xl text-xs border border-primary whitespace-nowrap",
                                 {
-                                    "bg-white text-black border-transparent": projectCategory?.name === category,
+                                    "bg-white text-black border-transparent": projectCategoryName === category,
                                 },
                             )}
                             disabled

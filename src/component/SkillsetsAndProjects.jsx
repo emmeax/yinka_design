@@ -1,4 +1,4 @@
-import { projectsByCategory } from "@/lib/data";
+import { categories as allCategories, projects } from "@/lib/data";
 import { carouselItemVariants, containerVariants, slideUpVariants } from "@/lib/motion";
 import Autoplay from "embla-carousel-autoplay";
 import { AnimatePresence, motion } from "motion/react";
@@ -11,12 +11,10 @@ import SectionHeading from "./SectionHeading";
 
 const SkillsetsAndProjects = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
-    const categories = ["All", ...projectsByCategory.map((category) => category.name)];
+    const categories = ["All", ...allCategories];
 
     const filteredProjects =
-        selectedCategory === "All"
-            ? projectsByCategory.flatMap((category) => category.projects)
-            : projectsByCategory.find((category) => category.name === selectedCategory)?.projects || [];
+        selectedCategory === "All" ? projects : projects.filter((p) => p.categories.includes(selectedCategory));
 
     return (
         <section className="relative isolate">
