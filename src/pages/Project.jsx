@@ -1,5 +1,5 @@
 import ProjectGrid from "@/component/ProjectGrid";
-import { projectsByCategory } from "@/lib/data";
+import { projects } from "@/lib/data";
 import { containerVariants, imageClipUpVariants, slideUpVariants } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
@@ -8,7 +8,7 @@ import { Navigate, useParams } from "react-router";
 const Project = () => {
     const { slug } = useParams();
 
-    const project = projectsByCategory.flatMap((category) => category.projects).find((p) => p.slug === slug);
+    const project = projects.find((p) => p.slug === slug);
     const objectives = ["Website Design", "Responsive Design", "Website Copywriting", "Brand Alignment"];
 
     if (!project) return <Navigate to="/" />;
@@ -76,14 +76,26 @@ const Project = () => {
                     <ProjectGrid
                         images={project.images}
                         className={cn("gap-4", {
-                            "lg:grid-cols-2 lg:[&>div:is(:nth-child(3))]:col-span-2": ["scaleon-website"].includes(
-                                project.slug,
-                            ), // Index 3 spans 2 columns on large screens
+                            // Default layout
+                            "lg:grid-cols-2": ["tobyteq-website"].includes(project.slug),
+                            // Index 3 spans 2 columns on large screens
+                            "lg:grid-cols-2 lg:[&>div:is(:nth-child(3))]:col-span-2": [
+                                "scaleon-website",
+                                "chedar-website",
+                            ].includes(project.slug),
+                            // Index 3 and 4 span 2 columns on large screens
                             "lg:grid-cols-2 lg:[&>div:is(:nth-child(3),:nth-child(4))]:col-span-2": [
                                 "prompt-plumber-ai",
-                            ].includes(project.slug), // Index 3 and 4 span 2 columns on large screens
+                            ].includes(project.slug),
+                            // Index 2 spans 2 columns, 1 and 4 span 3 columns on large screens
+                            "lg:grid-cols-3 lg:[&>div:is(:nth-child(2))]:col-span-2 lg:[&>div:is(:nth-child(1),:nth-child(4))]:col-span-3":
+                                ["correct-website"].includes(project.slug),
+                            // Index 1 and 4 span 2 columns, 3 spans 3 columns on large screens
+                            "lg:grid-cols-3 lg:[&>div:is(:nth-child(1),:nth-child(4))]:col-span-2 lg:[&>div:is(:nth-child(3))]:col-span-3":
+                                ["engage-x-website"].includes(project.slug),
+                            // Index 1 and 3 span 2 columns, last spans 3 columns on large screens
                             "lg:grid-cols-3 lg:[&>div:is(:nth-child(1),:nth-child(3))]:col-span-2 lg:[&>div:last-child]:col-span-3":
-                                ["watersmith-website", "axcel-cyber"].includes(project.slug), // Index 1 and 3 span 2 columns, last spans 3 columns on large screens
+                                ["watersmith-website", "axcel-cyber"].includes(project.slug),
                         })}
                     />
                 </div>
