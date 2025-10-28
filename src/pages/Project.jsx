@@ -38,6 +38,7 @@ const Project = () => {
                     viewport={{ once: true }}
                     src={project.desktopImage}
                     alt=""
+                    className="rounded-2xl size-full object-cover"
                 />
 
                 <div className="flex flex-col gap-[60px]">
@@ -82,7 +83,7 @@ const Project = () => {
                                 "prompt-plumber-ai",
                             ].includes(project.slug), // Index 3 and 4 span 2 columns on large screens
                             "lg:grid-cols-3 lg:[&>div:is(:nth-child(1),:nth-child(3))]:col-span-2 lg:[&>div:last-child]:col-span-3":
-                                ["watersmith-website"].includes(project.slug), // Index 1 and 3 span 2 columns, last spans 3 columns on large screens
+                                ["watersmith-website", "axcel-cyber"].includes(project.slug), // Index 1 and 3 span 2 columns, last spans 3 columns on large screens
                         })}
                     />
                 </div>
