@@ -7,6 +7,7 @@ export default {
                 primary: {
                     DEFAULT: "#A22CFF",
                     100: "#7A21BF",
+                    200: "#623187",
                 },
                 background: "#120120",
             },
