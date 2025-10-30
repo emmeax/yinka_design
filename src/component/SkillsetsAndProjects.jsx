@@ -74,7 +74,7 @@ const SkillsetsAndProjects = () => {
                                     viewport={{ once: true }}
                                     className="min-w-0 flex-shrink-0 flex-grow-0 basis-[90%] lg:basis-[618.5px] pl-7"
                                 >
-                                    <Link to={`/projects/${slug}`}>
+                                    <Link to={slug.length > 0 ? `/projects/${slug}` : ""}>
                                         <div className="flex flex-col gap-6">
                                             <div className="overflow-hidden group lg:h-[350px] h-[194px]">
                                                 <img
