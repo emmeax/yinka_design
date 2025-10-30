@@ -53,6 +53,11 @@ import EngageX3 from "@/assets/Image/engage-x-website-3.svg";
 import EngageX4 from "@/assets/Image/engage-x-website-4.svg";
 import EngageX5 from "@/assets/Image/engage-x-website-5.svg";
 import EngageX6 from "@/assets/Image/engage-x-website-6.svg";
+// Pith Deck Images
+import EngageXHBCUPitch1 from "@/assets/Image/engage-x-hbcu-pitch-1.svg";
+import EngageXPitch1 from "@/assets/Image/engage-x-pitch-1.svg";
+import IVMcwilliamPitch1 from "@/assets/Image/iv-mcwilliam-1.svg";
+import TatizoPitch1 from "@/assets/Image/tatizo-pitch-1.svg";
 
 export const skills = [
     "UI/UX DESIGN",
@@ -151,5 +156,45 @@ export const projects = [
         images: [EngageX2, EngageX3, EngageX4, EngageX5, EngageX6],
         tags: ["Web Design", "SaaS"],
         categories: ["Website Design"],
+    },
+    {
+        id: 9,
+        slug: "",
+        title: "",
+        description: "",
+        desktopImage: EngageXPitch1,
+        images: [],
+        tags: ["Pitch Desk", "Finance"],
+        categories: ["Pitch & Presentations"],
+    },
+    {
+        id: 10,
+        slug: "",
+        title: "",
+        description: "",
+        desktopImage: TatizoPitch1,
+        images: [],
+        tags: ["Pitch Desk", "SaaS"],
+        categories: ["Pitch & Presentations"],
+    },
+    {
+        id: 11,
+        slug: "",
+        title: "",
+        description: "",
+        desktopImage: EngageXHBCUPitch1,
+        images: [],
+        tags: ["Pitch Desk", "Finance"],
+        categories: ["Pitch & Presentations"],
+    },
+    {
+        id: 12,
+        slug: "",
+        title: "",
+        description: "",
+        desktopImage: IVMcwilliamPitch1,
+        images: [],
+        tags: ["Pitch Desk", "SaaS"],
+        categories: ["Pitch & Presentations"],
     },
 ];
